@@ -2,7 +2,7 @@
 
 ## I'm grateful that you're interested in my work! :)
 
-![Alt Text](https://media0.giphy.com/media/5GoVLqeAOo6PK/200.gif)
+![Alt Text](https://c.tenor.com/OXvCPNJKJB8AAAAC/yes-im-so-excited.gif)
 
 I hope the following guide will make it easier for you to understand what we did.
 
