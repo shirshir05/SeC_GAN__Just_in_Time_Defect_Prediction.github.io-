@@ -61,6 +61,7 @@ class JiraIssue(Issue):
 def get_jira_issues(project_name, url="http://issues.apache.org/jira", bunch=100):
     """
     A function that returns a list of all the issue in Jira.
+
     :param project_name: The key issue of the project as it appears in Jira(https://issues.apache.org/jira/secure/Dashboard.jspa)
     :type project_name: str
     :param url: URL to the site where the issue is located (deftly: http://issues.apache.org/jira)
@@ -104,6 +105,7 @@ def fix_renamed_files(files):
     after:
     u'tika-core/src/test/resources/org/apache/tika/fork/embedded_with_npe.xml'
     u'tika-core/src/test/resources/test-documents/embedded_with_npe.xml'
+
     :param files: self._files
     :return: list of modified files in commit
     """
@@ -131,6 +133,7 @@ class CommittedFile(object):
     def __init__(self, sha, name, insertions, deletions):
         """
         A constructor who initializes the fields.
+
         :param sha: sha commit
         :type sha:  str
         :param name: name file
@@ -159,6 +162,7 @@ class CommittedModeFile(object):
     def __init__(self, sha, name, mode):
         """
         A constructor who initializes the field fields.
+
         :param sha: sha commit
         :type sha:  str
         :param name: name file
@@ -178,6 +182,7 @@ def _get_commits_files(repo):
     The function returns all the commit for the project. The object returned is a dictionary that contains the sha of
     the commit as the key and the value is the CommittedFile type.
     CommittedFile contain information on the commit such as a number of insertions, deletions and etc.
+
     :param repo: Represents a git repository and
     allows you to query references, gather commit information, generate diffs, create and clone repositories query
     the log. :type repo: git.repo.base.Repo
@@ -200,6 +205,7 @@ def _get_commits_modification_files(repo):
     """
     For each modification (commit + file) returns the mode (rename (R), added (A), deleted(D) or modify(M)) performed
     on the file.
+
     :param repo: Represents a git repository and allows you to query references, gather commit
     information, generate diffs, create and clone repositories query the log.
     :type repo: git.repo.base.Repo
@@ -230,6 +236,7 @@ class Commit(object):
     def __init__(self, bug_id, git_commit, issue=None, files=None, is_java_commit=True):
         """
         A constructor who initializes the field fields.
+
         :param bug_id:
         :param git_commit:
         :param issue:
@@ -323,6 +330,7 @@ def extract_json(repo_path, jira_key, repo_full_name, out_json, out_non_tests_js
     :param out_non_tests_json: Name a folder for storing the files of the modification that induced defect (without
     modification that change only test file).
     :type out_non_tests_json: str
+
     """
     issues = get_jira_issues(jira_key)
     commits = _commits_and_issues(git.Repo(repo_path), issues)

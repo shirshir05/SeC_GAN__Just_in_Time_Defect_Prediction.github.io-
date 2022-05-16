@@ -216,13 +216,16 @@ tuning_D = {"D":
 def init_ctgna(two_g=True):
     """
     The function reads the file containing the faked instances.
+
     :param two_g: A parameter that specifies whether to use information from one G or two G.
     A default value is True and therefore two G are used.
     :type bool
-    :returns: data_from_G (X) , y_from_G (Y)
+    :return: data_from_G (X) , y_from_G (Y)
     :rtype: DataFrame, Series
 
-    .. note:: You must create the fake data using the generator from file Generate_fake.py
+    .. note::
+            You must create the fake data using the generator from file Generate_fake.py
+
     """
     if two_g:
         data = pd.read_csv(os.path.join(NAME_PROJECT, "train_test", f"new_fake_data_{p}_bug_2000.csv"))  # _1000_512
@@ -244,7 +247,8 @@ def init_ctgna(two_g=True):
 def read_data():
     """
     The function reads the data after it has completed the preprocessing process.
-    :returns: X_train, X_test, X_valid, y_train, y_test, y_valid
+
+    :return: X_train, X_test, X_valid, y_train, y_test, y_valid
     :rtype: DataFrame,, DataFrame, DataFrame, Series, Series, Series
 
     .. note:: You must create the train, validation and test set using from file main_create_data.py
@@ -278,6 +282,7 @@ def init_value():
 def tuning(x_val, y_val, space, estimator):
     """
     Function that performs a tuning process to the estimator on the validation set.
+
     :param x_val: Training vector (Validation set from the data)
     :type x_val: DataFrame
     :param y_val: Target relative to X for classification
@@ -290,8 +295,9 @@ def tuning(x_val, y_val, space, estimator):
     list)
     :param estimator: Classifier - this is assumed to implement the scikit-learn estimator interface.
     :type estimator: object
-    :return Parameter setting that gave the best results on the hold out data.
+    :return: Parameter setting that gave the best results on the hold out data.
     :rtype: Dictionary
+
     """
     cv_inner = StratifiedKFold(n_splits=10, shuffle=True, random_state=42)
     search = GridSearchCV(estimator, space, scoring='f1', n_jobs=-1, cv=cv_inner, refit=True)
@@ -306,6 +312,7 @@ def train(X_train, y_train, X_test, y_test, model):
     X_semantic_change.
     The function also calculates the importances of the features and saves them in the results folder in a file named
     importances_path.
+
     :param X_train: Training vector (Training set from the data)
     :type X_train: DataFrame
     :param y_train: Target relative to X_train
@@ -317,7 +324,7 @@ def train(X_train, y_train, X_test, y_test, model):
     :param model: Classifier - this is assumed to implement the scikit-learn estimator interface.
     :type model: Union[sklearn.ensemble.RandomForestClassifier, sklearn.linear_model.LogisticRegression]
 
-    :return scores (on X test), play_scores (on X_semantic_change)
+    :return: scores (on X test), play_scores (on X_semantic_change)
     :rtype: list, list
     """
     model.fit(X_train, y_train)
@@ -413,6 +420,7 @@ class Discriminator(nn.Module):
     def forward(self, input):
         """
         The forward process - defines the computation performed at every call.
+
         :param input:
         :type input:
         :return: model_output
@@ -424,9 +432,11 @@ class Discriminator(nn.Module):
 def generate_batch_real():
     """
     .. generate_batch_real:
+
     Random selection of samples from the train set for a single batch.
     The batch size is determined by the keyword "batch_size" in the dictionary tuning_D (default 30).. The percentage of instances
     that did not induce a defect is defined by the keyword "number_commit_without_bug" (default 0.8).
+
     :return: [X_real, labels]
     :rtype: DataFrame, Series
     """
@@ -449,6 +459,7 @@ def train_iteration_D_real_data(write=False):
     """
     The function trains the model on batch of real example and calculates the loss using BCELoos.
     This function use in :ref:`generate_batch_real` to generate data for ths batch.
+
     :param write: Indicates whether to write the loss result to the file
     :type write: bool
     """
@@ -469,9 +480,11 @@ def train_iteration_D_real_data(write=False):
 def generate_batch_fake():
     """
     .. generate_batch_fake:
+
     Random selection of samples from the fake data set for a single batch.
     The batch size is determined by the keyword "batch_size" in the dictionary tuning_D (default 30).
     The percentage of instances that did not induce a defect is defined by the keyword "number_commit_without_bug" (default 0.8).
+
     :return: [X_fake, labels]
     :rtype: DataFrame, Series
     """
@@ -494,6 +507,7 @@ def train_iteration_D_fake_data(write=False):
     """
     The function trains the model on batch of fake example and calculates the loss using BCELoos.
     This function use in :ref:`generate_batch_fake` to generate data for ths batch.
+
     :param write: Indicates whether to write the loss result to the file
     :type write: bool
     """

@@ -12,7 +12,9 @@ def read_commit_blame():
 
     :return: dataframe contain two columns: commit and file name
     :rtype: DataFrame
-    .. notes:: You must run the function main_szz() in file issues_extractor.py before execute this function
+
+    .. note::
+            You must run the function main_szz() in file issues_extractor.py before execute this function
     """
     dataset = pd.read_csv(
         variable.get_name_dit_blame() + r"/pydriller_" + variable.get_name_github() + "_bugfixes_bic.csv",
@@ -24,18 +26,19 @@ def read_commit_blame():
 
 def update_bug(df, commit_blame):
     """
-    The function merges between the extracted features (df) to the column whether the change induced a bug (commit_blame).
+    The function merges between the extracted features (df) to the column whether the change induced a bug
+    (commit_blame).
 
     :param df: all data that extract from bic repository
     :type df: DataFrame
     :param commit_blame: dataframe contain two columns: commit and file name. all commit in this file induced defect
     according SZZ algorithm.
     :type commit_blame: DataFrame
-
     :return: dataset add column name "blame commit" to df that indicate if the modification (commit+file) induced defect.
     :rtype: DataFrame
 
     .. notes:: You must run the function  main_szz() in file issues_extractor.py before execute this function
+
     """
     dataset = df.merge(commit_blame, how='left', left_on=['file_name', 'commit'], right_on=['filename', 'bic'])
     dataset['blame commit'] = dataset.apply(lambda x: 1 if len(str(x['bic'])) > 3 else 0, axis=1)
