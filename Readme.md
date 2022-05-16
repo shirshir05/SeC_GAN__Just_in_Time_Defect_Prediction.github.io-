@@ -2,10 +2,18 @@
 
 ## I'm grateful that you're interested in my work! :)
 
+![Alt Text](https://media0.giphy.com/media/5GoVLqeAOo6PK/200.gif)
+
 I hope the following guide will make it easier for you to understand what we did.
 
+## Documentation
+
 There is documentation for all functions [here](https://shirshir05.github.io/SeC_GAN__Just_in_Time_Defect_Prediction.github.io-/), and we recommend you take a look.
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
+**For example**: 
+
+![Alt Text](https://github.com/shirshir05/SeC_GAN__Just_in_Time_Defect_Prediction.github.io-/blob/master/Image/documentation%20.jpg)
+
 
 
 ## Requirements
