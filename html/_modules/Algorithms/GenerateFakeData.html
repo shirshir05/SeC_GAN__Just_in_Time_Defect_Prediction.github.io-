@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms.GenerateFakeData &#8212; SeC-GAN 1.1 documentation</title>
+    <link rel="stylesheet" href="../../static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../static/documentation_options.js"></script>
+    <script src="../../static/jquery.js"></script>
+    <script src="../../static/underscore.js"></script>
+    <script src="../../static/doctools.js"></script>
+    <script src="../../static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for Algorithms.GenerateFakeData</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">sdv.metrics.tabular</span> <span class="kn">import</span> <span class="n">BNLogLikelihood</span><span class="p">,</span> <span class="n">BNLikelihood</span><span class="p">,</span> <span class="n">SVCDetection</span><span class="p">,</span> <span class="n">BinaryDecisionTreeClassifier</span><span class="p">,</span> \
+    <span class="n">LogisticDetection</span><span class="p">,</span> <span class="n">SVCDetection</span><span class="p">,</span> <span class="n">BinaryDecisionTreeClassifier</span><span class="p">,</span> <span class="n">BinaryAdaBoostClassifier</span><span class="p">,</span> \
+    <span class="n">BinaryLogisticRegression</span><span class="p">,</span> <span class="n">BinaryMLPClassifier</span><span class="p">,</span> <span class="n">MulticlassDecisionTreeClassifier</span><span class="p">,</span> <span class="n">MulticlassMLPClassifier</span><span class="p">,</span> \
+    <span class="n">LinearRegression</span><span class="p">,</span> <span class="n">MLPRegressor</span><span class="p">,</span> <span class="n">GMLogLikelihood</span><span class="p">,</span> <span class="n">CSTest</span><span class="p">,</span> <span class="n">KSTest</span><span class="p">,</span> <span class="n">KSTestExtended</span><span class="p">,</span> <span class="n">CategoricalCAP</span><span class="p">,</span> \
+    <span class="n">CategoricalZeroCAP</span><span class="p">,</span> <span class="n">CategoricalGeneralizedCAP</span><span class="p">,</span> <span class="n">CategoricalNB</span><span class="p">,</span> <span class="n">CategoricalKNN</span><span class="p">,</span> <span class="n">CategoricalRF</span><span class="p">,</span> <span class="n">CategoricalSVM</span><span class="p">,</span> \
+    <span class="n">CategoricalEnsemble</span><span class="p">,</span> <span class="n">NumericalLR</span><span class="p">,</span> <span class="n">NumericalMLP</span><span class="p">,</span> <span class="n">NumericalSVR</span><span class="p">,</span> <span class="n">NumericalRadiusNearestNeighbor</span><span class="p">,</span> <span class="n">ContinuousKLDivergence</span> \
+    <span class="p">,</span> <span class="n">DiscreteKLDivergence</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">sdv.tabular</span> <span class="kn">import</span> <span class="n">CTGAN</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;/home/shir0/GAN_VS_RF&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">variable</span>
+
+<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">LogisticDetection</span><span class="p">,</span> <span class="n">SVCDetection</span><span class="p">,</span>  <span class="c1"># Detection Metrics</span>
+    <span class="n">GMLogLikelihood</span><span class="p">,</span>  <span class="c1"># Likelihood Metrics</span>
+    <span class="n">KSTest</span><span class="p">]</span>  <span class="c1"># Statistical Metrics]</span>
+
+<span class="n">metrics_all_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">BinaryDecisionTreeClassifier</span><span class="p">,</span> <span class="n">BinaryAdaBoostClassifier</span><span class="p">,</span> <span class="n">BinaryLogisticRegression</span><span class="p">,</span>
+                    <span class="n">BinaryMLPClassifier</span><span class="p">,</span>
+                    <span class="c1"># Binary Classification Metrics</span>
+                    <span class="n">LinearRegression</span><span class="p">,</span> <span class="n">MLPRegressor</span><span class="p">,</span>  <span class="c1"># Regression Metrics</span>
+                    <span class="n">MulticlassDecisionTreeClassifier</span><span class="p">,</span> <span class="n">MulticlassMLPClassifier</span><span class="p">,</span>  <span class="c1"># Multiclass Classification Metrics</span>
+                    <span class="n">ContinuousKLDivergence</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="eval_metric_all_data"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.GenerateFakeData.eval_metric_all_data">[docs]</a><span class="k">def</span> <span class="nf">eval_metric_all_data</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">example</span><span class="p">,</span> <span class="n">name_file_data</span><span class="p">):</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">metrics_all_data</span><span class="p">:</span>
+        <span class="n">ans</span><span class="p">,</span> <span class="n">error1</span><span class="p">,</span> <span class="n">normalized_score</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">metric</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span>
+                             <span class="n">target</span><span class="o">=</span><span class="s1">&#39;commit insert bug?&#39;</span><span class="p">)</span>
+        <span class="n">normalized_score</span> <span class="o">=</span> <span class="n">metric</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">metric</span><span class="p">),</span>
+                       <span class="s1">&#39;raw_score&#39;</span><span class="p">:</span> <span class="n">ans</span><span class="p">,</span>
+                       <span class="s1">&#39;normalized_score&#39;</span><span class="p">:</span> <span class="n">normalized_score</span><span class="p">,</span>
+                       <span class="s1">&#39;min_value&#39;</span><span class="p">:</span> <span class="n">metric</span><span class="o">.</span><span class="n">min_value</span><span class="p">,</span>
+                       <span class="s1">&#39;max_value&#39;</span><span class="p">:</span> <span class="n">metric</span><span class="o">.</span><span class="n">max_value</span><span class="p">,</span>
+                       <span class="s1">&#39;goal&#39;</span><span class="p">:</span> <span class="n">metric</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                       <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">error1</span><span class="p">],</span>
+                       <span class="p">})</span>
+    <span class="n">eval_CTGAN</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">project</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">name_file_data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores</span></div>
+
+
+<div class="viewcode-block" id="eval_metrics"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.GenerateFakeData.eval_metrics">[docs]</a><span class="k">def</span> <span class="nf">eval_metrics</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">example</span><span class="p">,</span> <span class="n">name_file_data</span><span class="p">):</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">metrics</span><span class="p">:</span>
+        <span class="n">ans</span><span class="p">,</span> <span class="n">error1</span><span class="p">,</span> <span class="n">normalized_score</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">metric</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">sample</span><span class="p">)</span>
+            <span class="n">normalized_score</span> <span class="o">=</span> <span class="n">metric</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e1</span><span class="p">:</span>
+            <span class="n">error1</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">metric</span><span class="p">),</span>
+                       <span class="s1">&#39;raw_score&#39;</span><span class="p">:</span> <span class="n">ans</span><span class="p">,</span>
+                       <span class="s1">&#39;normalized_score&#39;</span><span class="p">:</span> <span class="n">normalized_score</span><span class="p">,</span>
+                       <span class="s1">&#39;min_value&#39;</span><span class="p">:</span> <span class="n">metric</span><span class="o">.</span><span class="n">min_value</span><span class="p">,</span>
+                       <span class="s1">&#39;max_value&#39;</span><span class="p">:</span> <span class="n">metric</span><span class="o">.</span><span class="n">max_value</span><span class="p">,</span>
+                       <span class="s1">&#39;goal&#39;</span><span class="p">:</span> <span class="n">metric</span><span class="o">.</span><span class="n">goal</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                       <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">error1</span><span class="p">],</span>
+                       <span class="p">})</span>
+    <span class="n">eval_CTGAN</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">project</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">name_file_data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores</span></div>
+
+
+<div class="viewcode-block" id="CPU_Unpickler"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.GenerateFakeData.CPU_Unpickler">[docs]</a><span class="k">class</span> <span class="nc">CPU_Unpickler</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">Unpickler</span><span class="p">):</span>
+<div class="viewcode-block" id="CPU_Unpickler.find_class"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.GenerateFakeData.CPU_Unpickler.find_class">[docs]</a>    <span class="k">def</span> <span class="nf">find_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">module</span> <span class="o">==</span> <span class="s1">&#39;torch.storage&#39;</span> <span class="ow">and</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;_load_from_bytes&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">map_location</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="create_data"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.GenerateFakeData.create_data">[docs]</a><span class="k">def</span> <span class="nf">create_data</span><span class="p">(</span><span class="n">name_file_ctgan</span><span class="p">,</span> <span class="n">example</span><span class="p">,</span> <span class="n">name_file_data</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">CTGAN</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../Data/CTGAN/</span><span class="si">{</span><span class="n">name_file_ctgan</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../Data/CTGAN/</span><span class="si">{</span><span class="n">name_file_ctgan</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">CPU_Unpickler</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">_device</span> <span class="o">=</span> <span class="s1">&#39;cpu&#39;</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="o">~</span><span class="n">sample</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+    <span class="c1"># print(sample.shape)</span>
+    <span class="k">if</span> <span class="s2">&quot;all&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name_file_data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;nbug&quot;</span> <span class="ow">in</span> <span class="n">name_file_data</span><span class="p">:</span>
+            <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;commit insert bug?&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;commit insert bug?&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">sample</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;train_test&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;new_fake_data_</span><span class="si">{</span><span class="n">project</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">name_file_data</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">))</span>
+    <span class="n">eval_metrics</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">example</span><span class="p">,</span> <span class="n">name_file_data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sample</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">eval_CTGAN</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">projects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cayenne&#39;</span><span class="p">,</span> <span class="s1">&#39;kylin&#39;</span><span class="p">,</span> <span class="s1">&#39;jspwiki&#39;</span><span class="p">,</span> <span class="s1">&#39;manifoldcf&#39;</span><span class="p">,</span> <span class="s1">&#39;commons-lang&#39;</span><span class="p">,</span> <span class="s1">&#39;tika&#39;</span><span class="p">,</span> <span class="s1">&#39;kafka&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;zookeeper&#39;</span><span class="p">,</span> <span class="s1">&#39;zeppelin&#39;</span><span class="p">,</span> <span class="s1">&#39;shiro&#39;</span><span class="p">,</span> <span class="s1">&#39;logging-log4j2&#39;</span><span class="p">,</span> <span class="s1">&#39;activemq-artemis&#39;</span><span class="p">,</span> <span class="s1">&#39;shindig&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;directory-studio&#39;</span><span class="p">,</span> <span class="s1">&#39;tapestry-5&#39;</span><span class="p">,</span> <span class="s1">&#39;openjpa&#39;</span><span class="p">,</span> <span class="s1">&#39;knox&#39;</span><span class="p">,</span> <span class="s1">&#39;commons-configuration&#39;</span><span class="p">,</span> <span class="s1">&#39;xmlgraphics-batik&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;mahout&#39;</span><span class="p">,</span> <span class="s1">&#39;deltaspike&#39;</span><span class="p">,</span> <span class="s1">&#39;openwebbeans&#39;</span><span class="p">,</span> <span class="s2">&quot;commons-collections&quot;</span><span class="p">]</span>
+    <span class="n">projects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cayenne&#39;</span><span class="p">,</span> <span class="s1">&#39;knox&#39;</span><span class="p">,</span> <span class="s1">&#39;xmlgraphics-batik&#39;</span><span class="p">,</span> <span class="s1">&#39;mahout&#39;</span><span class="p">,</span> <span class="s1">&#39;deltaspike&#39;</span><span class="p">,</span> <span class="s1">&#39;openwebbeans&#39;</span><span class="p">,</span> <span class="s1">&#39;commons-collections&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">projects</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">NAME_PROJECT</span> <span class="o">=</span> <span class="s2">&quot;../Data/&quot;</span> <span class="o">+</span> <span class="n">project</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NAME_PROJECT</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/train_test/train_</span><span class="si">{</span><span class="n">project</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">)</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
+            <span class="n">X_train</span> <span class="o">=</span> <span class="n">df</span>
+            <span class="n">features_check</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">variable</span><span class="o">.</span><span class="n">features_check_before_pre_process</span><span class="p">]</span>
+            <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="n">features_check</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;commit insert bug?&#39;</span><span class="p">]]</span>
+
+            <span class="c1"># TODO: 2 Generators</span>
+            <span class="c1"># number_nbug = X_train.iloc[np.where(X_train[&#39;commit insert bug?&#39;] == 0)[0]]</span>
+            <span class="c1"># number_bug = X_train.iloc[np.where(X_train[&#39;commit insert bug?&#39;] == 1)[0]]</span>
+            <span class="c1">#</span>
+            <span class="c1"># synthetic_nbug = create_data(f&#39;two_G/CTGAN_{project}_nbug_500_512.pkl&#39;, number_nbug, &quot;nbug_500_512&quot;)</span>
+            <span class="c1"># synthetic_bug = create_data(f&#39;two_G/CTGAN_{project}_bug_1000_512.pkl&#39;, number_bug, &quot;bug_1000_512&quot;)</span>
+            <span class="c1"># all_data = pd.concat([synthetic_nbug, synthetic_bug])</span>
+
+            <span class="c1"># TODO: 1 Generator</span>
+            <span class="n">all_data</span> <span class="o">=</span> <span class="n">create_data</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Generator_</span><span class="si">{</span><span class="n">project</span><span class="si">}</span><span class="s1">_1000_512.pkl&#39;</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="s2">&quot;all_1000_512&quot;</span><span class="p">)</span>
+
+            <span class="n">eval_metric_all_data</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">pass</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">eval_CTGAN</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="s2">&quot;eval_CTGAN_all_1000_512.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Name project&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;raw_score&#39;</span><span class="p">,</span> <span class="s1">&#39;normalized_score&#39;</span><span class="p">,</span> <span class="s1">&#39;min_value&#39;</span><span class="p">,</span> <span class="s1">&#39;max_value&#39;</span><span class="p">,</span> <span class="s1">&#39;goal&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;error&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">eval_CTGAN</span><span class="p">:</span>
+            <span class="c1"># f.write(str(key))</span>
+            <span class="c1"># f.write(&quot;,&quot;)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">eval_CTGAN</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">SeC-GAN</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Shir Cohen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

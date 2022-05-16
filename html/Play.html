@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play package &#8212; SeC-GAN 1.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
+    <link rel="stylesheet" href="static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
+    <script src="static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SeC-GAN 1.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="sources/Play.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-Play.play_algorithm">
+   Play.play_algorithm module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-Play.rules">
+   Play.rules module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-Play">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Play package</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-Play.play_algorithm">
+   Play.play_algorithm module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-Play.rules">
+   Play.rules module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-Play">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="play-package">
+<h1>Play package<a class="headerlink" href="#play-package" title="Permalink to this headline">#</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="module-Play.play_algorithm">
+<span id="play-play-algorithm-module"></span><h2>Play.play_algorithm module<a class="headerlink" href="#module-Play.play_algorithm" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.apply_rules">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">apply_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_diff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tp_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#apply_rules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.apply_rules" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.calculate_cosine_similarity">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">calculate_cosine_similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Play.play_algorithm.calculate_cosine_similarity" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.calculate_manhattan_distance">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">calculate_manhattan_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Play.play_algorithm.calculate_manhattan_distance" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.check_valid">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">check_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_diff_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_affect_key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#check_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.check_valid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.distance_func">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">distance_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_with_parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tp_with_parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#distance_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.distance_func" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.euclidean_similarity">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">euclidean_similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Play.play_algorithm.euclidean_similarity" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.get_similarities">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">get_similarities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#get_similarities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.get_similarities" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.move">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.move" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.play_game">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">play_game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#play_game"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.play_game" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.valu_diff_distance">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">valu_diff_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Play.play_algorithm.valu_diff_distance" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Play.play_algorithm.write">
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_diff</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.write" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-Play.rules">
+<span id="play-rules-module"></span><h2>Play.rules module<a class="headerlink" href="#module-Play.rules" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddAssignWithSwitch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddAssignWithSwitch</span></span><a class="reference internal" href="_modules/Play/rules.html#AddAssignWithSwitch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddAssignWithSwitch" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.AddSwitchStatement" title="Play.rules.AddSwitchStatement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.AddSwitchStatement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddAssignWithSwitch.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddAssignWithSwitch.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddAssignWithSwitch.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddAssignemnt2EqualAssignment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddAssignemnt2EqualAssignment</span></span><a class="reference internal" href="_modules/Play/rules.html#AddAssignemnt2EqualAssignment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddAssignemnt2EqualAssignment" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddAssignemnt2EqualAssignment.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddAssignemnt2EqualAssignment.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddAssignemnt2EqualAssignment.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddCommaNewLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddCommaNewLine</span></span><a class="reference internal" href="_modules/Play/rules.html#AddCommaNewLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddCommaNewLine" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddCommaNewLine.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddCommaNewLine.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddCommaNewLine.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddComment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddComment</span></span><a class="reference internal" href="_modules/Play/rules.html#AddComment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddComment" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddComment.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddComment.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddComment.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddCommentNewLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddCommentNewLine</span></span><a class="reference internal" href="_modules/Play/rules.html#AddCommentNewLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddCommentNewLine" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddCommentNewLine.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddCommentNewLine.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddCommentNewLine.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddContinue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddContinue</span></span><a class="reference internal" href="_modules/Play/rules.html#AddContinue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddContinue" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.AddSwitchStatement" title="Play.rules.AddSwitchStatement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.AddSwitchStatement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddContinue.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddContinue.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddContinue.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddElseWithBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddElseWithBlock</span></span><a class="reference internal" href="_modules/Play/rules.html#AddElseWithBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddElseWithBlock" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddElseWithBlock.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddElseWithBlock.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddElseWithBlock.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddElseWithBlock.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddElseWithBlock.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddElseWithBlock.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddEmptyLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddEmptyLine</span></span><a class="reference internal" href="_modules/Play/rules.html#AddEmptyLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddEmptyLine" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddEmptyLine.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddEmptyLine.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddEmptyLine.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddEmptySwitch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddEmptySwitch</span></span><a class="reference internal" href="_modules/Play/rules.html#AddEmptySwitch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddEmptySwitch" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddEmptySwitch.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddEmptySwitch.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddEmptySwitch.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddIfAndElse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddIfAndElse</span></span><a class="reference internal" href="_modules/Play/rules.html#AddIfAndElse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfAndElse" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddIfAndElse.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddIfAndElse.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfAndElse.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddIfFalse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddIfFalse</span></span><a class="reference internal" href="_modules/Play/rules.html#AddIfFalse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfFalse" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddIfFalse.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddIfFalse.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfFalse.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddIfFalseCommaDot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddIfFalseCommaDot</span></span><a class="reference internal" href="_modules/Play/rules.html#AddIfFalseCommaDot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfFalseCommaDot" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddIfFalseCommaDot.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddIfFalseCommaDot.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfFalseCommaDot.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddIfMember">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddIfMember</span></span><a class="reference internal" href="_modules/Play/rules.html#AddIfMember"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfMember" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddIfMember.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddIfMember.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfMember.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddIfMember_v2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddIfMember_v2</span></span><a class="reference internal" href="_modules/Play/rules.html#AddIfMember_v2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfMember_v2" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddIfMember_v2.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddIfMember_v2.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddIfMember_v2.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddMethod">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddMethod</span></span><a class="reference internal" href="_modules/Play/rules.html#AddMethod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddMethod" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddMethod.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddMethod.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddMethod.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddPublicAttribute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddPublicAttribute</span></span><a class="reference internal" href="_modules/Play/rules.html#AddPublicAttribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddPublicAttribute" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddPublicAttribute.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddPublicAttribute.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddPublicAttribute.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddReturn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddReturn</span></span><a class="reference internal" href="_modules/Play/rules.html#AddReturn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddReturn" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.AddSwitchStatement" title="Play.rules.AddSwitchStatement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.AddSwitchStatement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddReturn.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddReturn.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddReturn.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddSwitchStatement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddSwitchStatement</span></span><a class="reference internal" href="_modules/Play/rules.html#AddSwitchStatement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddSwitchStatement" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddSwitchStatement.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddSwitchStatement.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddSwitchStatement.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddVar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddVar</span></span><a class="reference internal" href="_modules/Play/rules.html#AddVar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddVar" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddVar.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddVar.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddVar.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddWhileMember">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddWhileMember</span></span><a class="reference internal" href="_modules/Play/rules.html#AddWhileMember"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddWhileMember" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddWhileMember.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddWhileMember.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddWhileMember.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddWhileMemberV2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddWhileMemberV2</span></span><a class="reference internal" href="_modules/Play/rules.html#AddWhileMemberV2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddWhileMemberV2" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddWhileMemberV2.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddWhileMemberV2.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddWhileMemberV2.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.AddWhileUnreachable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">AddWhileUnreachable</span></span><a class="reference internal" href="_modules/Play/rules.html#AddWhileUnreachable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddWhileUnreachable" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.AddWhileUnreachable.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#AddWhileUnreachable.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.AddWhileUnreachable.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.CallFunctionWithoutParam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">CallFunctionWithoutParam</span></span><a class="reference internal" href="_modules/Play/rules.html#CallFunctionWithoutParam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.CallFunctionWithoutParam" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.AddSwitchStatement" title="Play.rules.AddSwitchStatement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.AddSwitchStatement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.CallFunctionWithoutParam.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#CallFunctionWithoutParam.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.CallFunctionWithoutParam.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.Case2IfElse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">Case2IfElse</span></span><a class="reference internal" href="_modules/Play/rules.html#Case2IfElse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.Case2IfElse" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.Case2IfElse.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#Case2IfElse.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.Case2IfElse.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.Case2IfElse.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#Case2IfElse.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.Case2IfElse.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.ChangeIfToFor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">ChangeIfToFor</span></span><a class="reference internal" href="_modules/Play/rules.html#ChangeIfToFor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ChangeIfToFor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.ChangeIfToFor.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#ChangeIfToFor.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ChangeIfToFor.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.ChangeIfToFor.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#ChangeIfToFor.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ChangeIfToFor.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.ChangeIfToWhile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">ChangeIfToWhile</span></span><a class="reference internal" href="_modules/Play/rules.html#ChangeIfToWhile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ChangeIfToWhile" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.ChangeIfToWhile.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#ChangeIfToWhile.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ChangeIfToWhile.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.ChangeIfToWhile.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#ChangeIfToWhile.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ChangeIfToWhile.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.For2While">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">For2While</span></span><a class="reference internal" href="_modules/Play/rules.html#For2While"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.For2While" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.For2While.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#For2While.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.For2While.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.For2While.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#For2While.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.For2While.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.ForStatementWithMember">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">ForStatementWithMember</span></span><a class="reference internal" href="_modules/Play/rules.html#ForStatementWithMember"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ForStatementWithMember" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.ForStatementWithMember.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#ForStatementWithMember.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ForStatementWithMember.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.IfDividing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">IfDividing</span></span><a class="reference internal" href="_modules/Play/rules.html#IfDividing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.IfDividing" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.IfDividing.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#IfDividing.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.IfDividing.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.IfDividing.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#IfDividing.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.IfDividing.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.IfWithCallFunctionParam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">IfWithCallFunctionParam</span></span><a class="reference internal" href="_modules/Play/rules.html#IfWithCallFunctionParam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.IfWithCallFunctionParam" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.IfWithCallFunctionParam.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#IfWithCallFunctionParam.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.IfWithCallFunctionParam.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.InfixExpressionDividing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">InfixExpressionDividing</span></span><a class="reference internal" href="_modules/Play/rules.html#InfixExpressionDividing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.InfixExpressionDividing" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.InfixExpressionDividing.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#InfixExpressionDividing.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.InfixExpressionDividing.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.InfixExpressionDividing.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#InfixExpressionDividing.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.InfixExpressionDividing.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.LoopIfContinue2Else">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">LoopIfContinue2Else</span></span><a class="reference internal" href="_modules/Play/rules.html#LoopIfContinue2Else"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.LoopIfContinue2Else" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.LoopIfContinue2Else.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#LoopIfContinue2Else.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.LoopIfContinue2Else.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.LoopIfContinue2Else.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#LoopIfContinue2Else.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.LoopIfContinue2Else.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.Move">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">Move</span></span><a class="reference internal" href="_modules/Play/rules.html#Move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.Move" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.Move.affect_feature">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#Move.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.Move.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.Move.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#Move.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.Move.apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.Move.apply_if_can">
+<span class="sig-name descname"><span class="pre">apply_if_can</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#Move.apply_if_can"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.Move.apply_if_can" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.Move.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#Move.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.Move.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.PP2AddAssignment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">PP2AddAssignment</span></span><a class="reference internal" href="_modules/Play/rules.html#PP2AddAssignment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.PP2AddAssignment" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.PP2AddAssignment.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#PP2AddAssignment.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.PP2AddAssignment.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.PP2AddAssignment.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#PP2AddAssignment.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.PP2AddAssignment.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.ReverseIfElse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">ReverseIfElse</span></span><a class="reference internal" href="_modules/Play/rules.html#ReverseIfElse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ReverseIfElse" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.ReverseIfElse.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#ReverseIfElse.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ReverseIfElse.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.ReverseIfElse.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#ReverseIfElse.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ReverseIfElse.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.SingleIF2ConditionalExp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">SingleIF2ConditionalExp</span></span><a class="reference internal" href="_modules/Play/rules.html#SingleIF2ConditionalExp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.SingleIF2ConditionalExp" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.SingleIF2ConditionalExp.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#SingleIF2ConditionalExp.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.SingleIF2ConditionalExp.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.SingleIF2ConditionalExp.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#SingleIF2ConditionalExp.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.SingleIF2ConditionalExp.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.SwitchWithCallFunctionParam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">SwitchWithCallFunctionParam</span></span><a class="reference internal" href="_modules/Play/rules.html#SwitchWithCallFunctionParam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.SwitchWithCallFunctionParam" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.AddSwitchStatement" title="Play.rules.AddSwitchStatement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.AddSwitchStatement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.SwitchWithCallFunctionParam.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#SwitchWithCallFunctionParam.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.SwitchWithCallFunctionParam.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.ThrowException">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">ThrowException</span></span><a class="reference internal" href="_modules/Play/rules.html#ThrowException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ThrowException" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.AddSwitchStatement" title="Play.rules.AddSwitchStatement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.AddSwitchStatement</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.ThrowException.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#ThrowException.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.ThrowException.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Play.rules.While2For">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Play.rules.</span></span><span class="sig-name descname"><span class="pre">While2For</span></span><a class="reference internal" href="_modules/Play/rules.html#While2For"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.While2For" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Play.rules.Move" title="Play.rules.Move"><code class="xref py py-class docutils literal notranslate"><span class="pre">Play.rules.Move</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.While2For.affect_feature">
+<span class="sig-name descname"><span class="pre">affect_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#While2For.affect_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.While2For.affect_feature" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Play.rules.While2For.can_apply">
+<span class="sig-name descname"><span class="pre">can_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/rules.html#While2For.can_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.rules.While2For.can_apply" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Play">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Play" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shir Cohen<br/>
+  
+      &copy; Copyright 2022, Shir Cohen.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

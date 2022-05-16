@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZZ.pydriller_szz &#8212; SeC-GAN 1.1 documentation</title>
+    <link rel="stylesheet" href="../../static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../static/documentation_options.js"></script>
+    <script src="../../static/jquery.js"></script>
+    <script src="../../static/underscore.js"></script>
+    <script src="../../static/doctools.js"></script>
+    <script src="../../static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for SZZ.pydriller_szz</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pydriller</span> <span class="kn">import</span> <span class="n">Repository</span><span class="p">,</span> <span class="n">Git</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<div class="viewcode-block" id="pydriller_szz"><a class="viewcode-back" href="../../SZZ.html#SZZ.pydriller_szz.pydriller_szz">[docs]</a><span class="k">def</span> <span class="nf">pydriller_szz</span><span class="p">(</span><span class="n">git_path</span><span class="p">,</span> <span class="n">bugsfixes_json</span><span class="p">,</span> <span class="n">results_path</span><span class="p">):</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">Git</span><span class="p">(</span><span class="n">git_path</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bugsfixes_json</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">commits</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+    <span class="n">bic</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">commits</span><span class="p">:</span>
+        <span class="n">bic</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;fix_commit_hash&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">Repository</span><span class="p">(</span><span class="n">git_path</span><span class="p">,</span> <span class="n">single</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;fix_commit_hash&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">traverse_commits</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">modified_files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">new_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">test</span><span class="se">\\</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">new_path</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">f</span><span class="o">.</span><span class="n">new_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.java&#39;</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_commits_last_modified_lines</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">:</span>
+                <span class="n">bic</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;fix_commit_hash&#39;</span><span class="p">]][</span><span class="n">f_name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">f_name</span><span class="p">])</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">results_path</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">bic</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+
+    <span class="n">as_csv</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">bugfix_commit</span> <span class="ow">in</span> <span class="n">bic</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">bic</span><span class="p">[</span><span class="n">bugfix_commit</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">bic_commit</span> <span class="ow">in</span> <span class="n">bic</span><span class="p">[</span><span class="n">bugfix_commit</span><span class="p">][</span><span class="n">f_name</span><span class="p">]:</span>
+                <span class="n">as_csv</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">bugfix_commit</span><span class="p">,</span> <span class="n">f_name</span><span class="p">,</span> <span class="n">bic_commit</span><span class="p">])</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">as_csv</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bugfix_commit&#39;</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;bic&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">results_path</span><span class="o">+</span><span class="s2">&quot;.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">SeC-GAN</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Shir Cohen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

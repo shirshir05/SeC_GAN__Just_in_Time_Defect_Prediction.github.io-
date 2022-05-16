@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreateData &#8212; SeC-GAN 1.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SeC-GAN 1.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Source code for CreateData</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">variable</span>
+<span class="kn">from</span> <span class="nn">Preprocess.preprocessing</span> <span class="kn">import</span> <span class="n">Preprocessing</span>
+<span class="kn">from</span> <span class="nn">SZZ.issues_extractor</span> <span class="kn">import</span> <span class="n">main_szz</span>
+
+
+<div class="viewcode-block" id="read_commit_blame"><a class="viewcode-back" href="../CreateData.html#CreateData.read_commit_blame">[docs]</a><span class="k">def</span> <span class="nf">read_commit_blame</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reading the file that contains the instances (commit + file) that induced defect.</span>
+<span class="sd">    This file Written in call the SZZ algorithm.</span>
+
+<span class="sd">    :return: dataframe contain two columns: commit and file name</span>
+<span class="sd">    :rtype: DataFrame</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">            You must run the function main_szz() in file issues_extractor.py before execute this function</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+        <span class="n">variable</span><span class="o">.</span><span class="n">get_name_dit_blame</span><span class="p">()</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;/pydriller_&quot;</span> <span class="o">+</span> <span class="n">variable</span><span class="o">.</span><span class="n">get_name_github</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;_bugfixes_bic.csv&quot;</span><span class="p">,</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;bugfix_commit&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dataset</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="update_bug"><a class="viewcode-back" href="../CreateData.html#CreateData.update_bug">[docs]</a><span class="k">def</span> <span class="nf">update_bug</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">commit_blame</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function merges between the extracted features (df) to the column whether the change induced a bug</span>
+<span class="sd">    (commit_blame).</span>
+
+<span class="sd">    :param df: all data that extract from bic repository</span>
+<span class="sd">    :type df: DataFrame</span>
+<span class="sd">    :param commit_blame: dataframe contain two columns: commit and file name. all commit in this file induced defect</span>
+<span class="sd">    according SZZ algorithm.</span>
+<span class="sd">    :type commit_blame: DataFrame</span>
+<span class="sd">    :return: dataset add column name &quot;blame commit&quot; to df that indicate if the modification (commit+file) induced defect.</span>
+<span class="sd">    :rtype: DataFrame</span>
+
+<span class="sd">    .. notes:: You must run the function  main_szz() in file issues_extractor.py before execute this function</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">commit_blame</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="s1">&#39;commit&#39;</span><span class="p">],</span> <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;bic&#39;</span><span class="p">])</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;blame commit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;bic&#39;</span><span class="p">]))</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;bic&quot;</span><span class="p">]</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">NAME_PROJECT</span> <span class="o">+</span> <span class="s2">&quot;/all_features.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dataset</span></div>
+
+
+<div class="viewcode-block" id="add_modification"><a class="viewcode-back" href="../CreateData.html#CreateData.add_modification">[docs]</a><span class="k">def</span> <span class="nf">add_modification</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The file &quot;modification_commit.csv&quot; written in SZZ algorithm process.</span>
+<span class="sd">    The file contains the change (rename (R), added (A), deleted(D) or modify(M)) that made each modification.</span>
+<span class="sd">    The function merges between the dataset and the file  &quot;modification_commit.csv&quot;</span>
+<span class="sd">    The function writes the dataset to a file named &quot;all_features.csv&quot;.</span>
+
+<span class="sd">    :param df: all data that extract from bic repository</span>
+<span class="sd">    :type df: DataFrame</span>
+
+<span class="sd">    :return: df Dataframe with a new column called &quot;mode&quot; that expresses the change (rename (R), added (A), deleted(D) or</span>
+<span class="sd">     modify(M))</span>
+
+<span class="sd">    .. note:: You must run the function  main_szz() in file issues_extractor.py before execute this function</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">modification</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">get_name_dit_blame</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/modification_commit.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="c1"># modification[&#39;file_name&#39;] = modification[&#39;file_name&#39;].str.lower()</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">modification</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="s1">&#39;commit&#39;</span><span class="p">],</span>
+                            <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="s1">&#39;commit_sha&#39;</span><span class="p">])</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;commit_sha&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">NAME_PROJECT</span> <span class="o">+</span> <span class="s2">&quot;/all_features.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dataset</span></div>
+
+
+<div class="viewcode-block" id="create_directories"><a class="viewcode-back" href="../CreateData.html#CreateData.create_directories">[docs]</a><span class="k">def</span> <span class="nf">create_directories</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function that produces the work environment for the project.</span>
+<span class="sd">    The function performs a clone from Github to a folder called Repo.</span>
+<span class="sd">    And creates additional folders to store information as a folder for saving results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">git</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;Repo&quot;</span><span class="p">,</span> <span class="n">variable</span><span class="o">.</span><span class="n">get_name_github</span><span class="p">())):</span>
+        <span class="n">git</span><span class="o">.</span><span class="n">Git</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;Repo&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="s2">&quot;https://github.com/apache/&quot;</span> <span class="o">+</span> <span class="n">variable</span><span class="o">.</span><span class="n">get_name_github</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;train_test&quot;</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;train_test&quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;blame&quot;</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;blame&quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;Results&quot;</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;Results&quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;BEGAN&quot;</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;BEGAN&quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;load_model&quot;</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;load_model&quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Tuning_Results&quot;</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Tuning_Results&quot;</span><span class="p">))</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># TODO: If you want to add a new project you need add the key_issue to the file named variable.py</span>
+
+    <span class="n">projects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cayenne&#39;</span><span class="p">,</span> <span class="s1">&#39;kylin&#39;</span><span class="p">,</span> <span class="s1">&#39;jspwiki&#39;</span><span class="p">,</span> <span class="s1">&#39;manifoldcf&#39;</span><span class="p">,</span> <span class="s1">&#39;commons-lang&#39;</span><span class="p">,</span> <span class="s1">&#39;tika&#39;</span><span class="p">,</span> <span class="s1">&#39;kafka&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;zookeeper&#39;</span><span class="p">,</span> <span class="s1">&#39;zeppelin&#39;</span><span class="p">,</span> <span class="s1">&#39;shiro&#39;</span><span class="p">,</span> <span class="s1">&#39;logging-log4j2&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;activemq-artemis&#39;</span><span class="p">,</span> <span class="s1">&#39;shindig&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;directory-studio&#39;</span><span class="p">,</span> <span class="s1">&#39;tapestry-5&#39;</span><span class="p">,</span> <span class="s1">&#39;openjpa&#39;</span><span class="p">,</span> <span class="s1">&#39;knox&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;commons-configuration&#39;</span><span class="p">,</span> <span class="s1">&#39;xmlgraphics-batik&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;mahout&#39;</span><span class="p">,</span> <span class="s1">&#39;deltaspike&#39;</span><span class="p">,</span> <span class="s1">&#39;openwebbeans&#39;</span><span class="p">,</span> <span class="s2">&quot;commons-collections&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">projects</span><span class="p">:</span>
+        <span class="n">project</span> <span class="o">=</span> <span class="n">p</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;name_project.txt&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
+        <span class="n">NAME_PROJECT</span> <span class="o">=</span> <span class="s2">&quot;Data/&quot;</span> <span class="o">+</span> <span class="n">project</span>
+        <span class="n">create_directories</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
+        <span class="n">main_szz</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;Repo&quot;</span><span class="p">,</span> <span class="n">variable</span><span class="o">.</span><span class="n">get_name_github</span><span class="p">()),</span> <span class="n">variable</span><span class="o">.</span><span class="n">get_name_github</span><span class="p">(),</span>
+                 <span class="n">variable</span><span class="o">.</span><span class="n">get_key_issue</span><span class="p">(),</span>
+                 <span class="n">variable</span><span class="o">.</span><span class="n">get_repo_full_name</span><span class="p">(),</span> <span class="n">variable</span><span class="o">.</span><span class="n">get_name_dit_blame</span><span class="p">())</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NAME_PROJECT</span> <span class="o">+</span> <span class="s2">&quot;/all.csv&quot;</span><span class="p">)</span>
+        <span class="n">commit_blame</span> <span class="o">=</span> <span class="n">read_commit_blame</span><span class="p">()</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">update_bug</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">commit_blame</span><span class="p">)</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">add_modification</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">Preprocessing</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;all_features.csv&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+        <span class="n">pre</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shir Cohen<br/>
+  
+      &copy; Copyright 2022, Shir Cohen.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
