@@ -44,7 +44,7 @@ Install all requirements in the "requirements.txt" file
       python ./javadiff/setup.py install
      ```
     * java version 11 and 8
-3. Do clone to project that ypu want extract data to directory name "local_repo" the repository. For example: apache/deltaspike.
+3. Do clone to project that you want extract data to directory name "local_repo" the repository. For example: apache/deltaspike.
 4. Execute: 
 ```
 python Main.py [0]
