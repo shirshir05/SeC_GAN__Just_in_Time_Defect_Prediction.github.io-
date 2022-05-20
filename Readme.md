@@ -2,10 +2,18 @@
 
 ## I'm grateful that you're interested in my work! :)
 
+![Alt Text](https://c.tenor.com/OXvCPNJKJB8AAAAC/yes-im-so-excited.gif)
+
 I hope the following guide will make it easier for you to understand what we did.
 
+## Documentation
+
 There is documentation for all functions [here](https://shirshir05.github.io/SeC_GAN__Just_in_Time_Defect_Prediction.github.io-/), and we recommend you take a look.
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
+**For example**: 
+
+![Alt Text](https://github.com/shirshir05/SeC_GAN__Just_in_Time_Defect_Prediction.github.io-/blob/master/Image/documentation%20.jpg)
+
 
 
 ## Requirements
@@ -15,7 +23,7 @@ Install all requirements in the "requirements.txt" file
 
 ## Step 1 - Extract Data:
 
-1. Download the folder named bic and javadiff.
+1. Do clone to [this project ](https://github.com/amir9979/bic).
 2. Requirements: 
     * Python 3.9 - then run: 
     ```
@@ -36,7 +44,7 @@ Install all requirements in the "requirements.txt" file
       python ./javadiff/setup.py install
      ```
     * java version 11 and 8
-3. Checkout to directory name "./local_repo" the repository. For example: apache/deltaspike.
+3. Do clone to project that you want extract data to directory name "local_repo" the repository. For example: apache/deltaspike.
 4. Execute: 
 ```
 python Main.py [0]
@@ -63,11 +71,11 @@ python Main.py [0]
 2. In Data folder open for each project directory with the name NAME_PROJECT and put the file "all.csv" in the directory. For example  (Data -> mahout -> all.csv). 
 3. Additionally, you can put the extracted  data from this repository in directory Data. 
 4. In "variable.py" add the NAME_PROJECT and the key_issue (according to JIRA) to function get_key_issue().
-5. Update NAME_PROJECT in line 83 and Run :
+5. Update NAME_PROJECT in list projects and Run :
    ```
-   python main_create_data.py
+   python CreateData.py
    ```
-7. After the run train and test file created in the path (Data -> NAME_PROJECT -> train_test). 
+7. After the run train, validation and test file created in the path (Data -> NAME_PROJECT -> train_test). 
 
 ## Step 3 -  [Train CTGAN](https://github.com/sdv-dev/CTGAN)
 
@@ -80,7 +88,8 @@ python Main.py [0]
 
 
 ## Step 4 - Run Algoritham 
-1. You can run each algorithm with '__main__' - you can change  the name project. 
-2. Additionally,  you can change the parameters of "Sec_GAN.py" in the parameters dict. 
+1. You can run each algorithm in file Main_Algorithm.
+2. Update NAME_PROJECT in list projects.
+3. Execute '__main__' with following parameters: path (int - save the number of runing), name_model (RF, LR or D), with_G( 0 (False), 1 (True)).
 
 ## Good luck !!! 
