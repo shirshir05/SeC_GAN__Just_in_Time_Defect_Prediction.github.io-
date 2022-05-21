@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play.play_algorithm &#8212; SeC-GAN 1.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SeC-GAN 1.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Source code for Play.play_algorithm</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">euclidean</span>
+
+<span class="n">IGNORE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;delta_TNLPM&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;delta_NL&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_ThrowStatement&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;delta_SwitchStatementCase&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_BreakStatement&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_WhileStatement&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;delta_Statement&quot;</span><span class="p">,</span> <span class="s1">&#39;delta_ContinueStatement&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_SwitchStatement&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;delta_NLE&#39;</span>
+<span class="p">]</span>
+<span class="n">euclidean_similarity</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tp</span><span class="p">,</span> <span class="n">n_sample</span><span class="p">:</span> <span class="p">[</span><span class="n">euclidean</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">tp</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">n_sample</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()]</span>
+<span class="n">valu_diff_distance</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tp</span><span class="p">,</span> <span class="n">n_sample</span><span class="p">:</span> <span class="p">[</span><span class="n">n_sample</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">tp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tp</span> <span class="k">if</span> <span class="n">tp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">n_sample</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+
+
+<div class="viewcode-block" id="check_valid"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.check_valid">[docs]</a><span class="k">def</span> <span class="nf">check_valid</span><span class="p">(</span><span class="n">value_diff_key</span><span class="p">,</span> <span class="n">features_affect_key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Checking the correctness of whether the semantic change can be applied.</span>
+
+<span class="sd">    :param value_diff_key:</span>
+<span class="sd">    :type value_diff_key: the number value that need change</span>
+<span class="sd">    :param features_affect_key:</span>
+<span class="sd">    :type features_affect_key: The numerical value that the semantic change changes</span>
+
+<span class="sd">    :return: Returns True if the semantic change can be performed. Otherwise returns False.</span>
+<span class="sd">    :rtype: bool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">value_diff_key</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">features_affect_key</span> <span class="o">&lt;=</span> <span class="n">value_diff_key</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">value_diff_key</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&gt;=</span> <span class="n">features_affect_key</span> <span class="o">&gt;=</span> <span class="n">value_diff_key</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="apply_rules"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.apply_rules">[docs]</a><span class="k">def</span> <span class="nf">apply_rules</span><span class="p">(</span><span class="n">value_diff</span><span class="p">,</span> <span class="n">tp_sample</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function that scans all the semantic changes and executes them if they satisfy the preconditions.</span>
+
+<span class="sd">    :param value_diff: Dict with the value need change from tp to n</span>
+<span class="sd">    :type value_diff: Dict</span>
+<span class="sd">    :param tp_sample: an instance that classified as TP</span>
+<span class="sd">    :type tp_sample: list</span>
+<span class="sd">    :param ignore: Indicates whether to ignore some of the features</span>
+<span class="sd">    :type ignore: bool</span>
+
+<span class="sd">    :return: success, new TP (or None if the success is False)</span>
+<span class="sd">    :rtype: bool, list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;Play.rules&quot;</span><span class="p">),</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">)</span>
+    <span class="n">dict_apply_rule</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rule_cls</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">:</span>
+        <span class="n">can_change</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ABC&#39;</span><span class="p">,</span> <span class="s2">&quot;Move&quot;</span><span class="p">,</span> <span class="s1">&#39;AddSwitchStatement&#39;</span><span class="p">]:</span>
+            <span class="n">features_affect</span> <span class="o">=</span> <span class="n">rule_cls</span><span class="o">.</span><span class="n">affect_feature</span><span class="p">(</span><span class="n">rule_cls</span><span class="p">)</span>
+            <span class="n">minimal_abs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+            <span class="n">ignore_time</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">features_affect</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">ignore</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">IGNORE</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">i</span> <span class="ow">in</span> <span class="n">IGNORE</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">features_affect</span><span class="o">.</span><span class="n">keys</span><span class="p">())]):</span>
+                    <span class="n">ignore_time</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">continue</span>
+                <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">value_diff</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="n">check_valid</span><span class="p">(</span><span class="n">value_diff</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">features_affect</span><span class="p">[</span><span class="n">key</span><span class="p">]):</span>
+                    <span class="k">if</span> <span class="n">minimal_abs</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">value_diff</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">features_affect</span><span class="p">[</span><span class="n">key</span><span class="p">]):</span>
+                        <span class="n">minimal_abs</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">value_diff</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">features_affect</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+                    <span class="k">continue</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">can_change</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="n">can_change</span> <span class="ow">and</span> <span class="n">rule_cls</span><span class="o">.</span><span class="n">can_apply</span><span class="p">(</span><span class="n">rule_cls</span><span class="p">,</span> <span class="n">tp_sample</span><span class="p">):</span>
+                <span class="n">dict_apply_rule</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">rule_cls</span><span class="p">,</span> <span class="o">-</span><span class="n">minimal_abs</span><span class="p">,</span> <span class="n">ignore_time</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">dict_apply_rule</span> <span class="o">!=</span> <span class="p">{}:</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dict_apply_rule</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="n">dict_apply_rule</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">])):</span>
+                <span class="n">rule_cls</span> <span class="o">=</span> <span class="n">dict_apply_rule</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">yes</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">yes</span> <span class="o">+=</span> <span class="n">rule_cls</span><span class="o">.</span><span class="n">apply_if_can</span><span class="p">(</span><span class="n">rule_cls</span><span class="p">,</span> <span class="n">tp_sample</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">dict_apply_rule</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="move"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.move">[docs]</a><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Semantically Equivalent Code Generation Semantically Equivalent Code Generation</span>
+
+<span class="sd">    :param tp_sample: instance that classified as TP</span>
+<span class="sd">    :type tp_sample: list</span>
+<span class="sd">   :param negative_samples: list with instances that classified as N (TN AND FN)</span>
+<span class="sd">   :type negative_samples: list</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">can_change</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">while</span> <span class="n">can_change</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">negative_without_parent</span> <span class="o">=</span> <span class="n">negative_samples</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">negative_samples</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;parent&quot;</span> <span class="ow">in</span> <span class="n">col</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">tp_without_parent</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;parent&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">i</span><span class="p">}</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">euclidean_similarity</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">tp_without_parent</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">negative_without_parent</span><span class="p">)</span>
+        <span class="n">sorted_</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">distance</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">distance</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">while</span> <span class="n">index</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">distance</span><span class="p">):</span>
+            <span class="n">current_n</span> <span class="o">=</span> <span class="n">negative_samples</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sorted_</span><span class="p">[</span><span class="n">index</span><span class="p">]]</span>
+            <span class="n">current_n_without_parent</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">current_n</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">current_n</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="s1">&#39;parent&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">i</span><span class="p">}</span>
+            <span class="n">value_diff</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">current_n_without_parent</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">tp_without_parent</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tp_without_parent</span> <span class="k">if</span>
+                          <span class="n">tp_without_parent</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">current_n_without_parent</span><span class="p">[</span><span class="n">i</span><span class="p">]}</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="n">apply_rules</span><span class="p">(</span><span class="n">value_diff</span><span class="p">,</span> <span class="n">tp_sample</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">success</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="k">break</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">can_change</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="get_similarities"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.get_similarities">[docs]</a><span class="k">def</span> <span class="nf">get_similarities</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">):</span>
+    <span class="n">copy_tp</span> <span class="o">=</span> <span class="n">tp_sample</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">move</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tp_sample</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">tp_sample</span> <span class="o">==</span> <span class="n">copy_tp</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="play_game"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.play_game">[docs]</a><span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">name_project</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The main algorithm of the process ECG.</span>
+
+<span class="sd">    :param X_test: Test vector (Test set from the data)</span>
+<span class="sd">    :type X_test: DataFrame</span>
+<span class="sd">    :param y_true:  1d array-like, or label indicator array / sparse matrix Ground truth (correct) target values.</span>
+<span class="sd">    :type y_true: array</span>
+<span class="sd">    :param y_pred:  1d array-like, or label indicator array / sparse matrix Estimated targets as returned by a classifier.</span>
+<span class="sd">    :type y_pred: array</span>
+<span class="sd">    :param name_project: path to save file</span>
+<span class="sd">    :type name_project: str</span>
+
+<span class="sd">    :return: X_semantics_change</span>
+<span class="sd">    :rtype: DataFrame</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">find_negative_example</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+        <span class="n">negative_classify</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">iterrows</span><span class="p">(),</span> <span class="n">y_true</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(),</span> <span class="n">y_pred</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># find all negative instance</span>
+                <span class="n">negative_classify</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">to_list</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">negative_classify</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="n">negative_classify</span> <span class="o">=</span> <span class="n">find_negative_example</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">X_play</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">new_y_true</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">index_success</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">index_of_tp</span><span class="p">,</span> <span class="n">list_index_of_tp</span><span class="p">,</span> <span class="n">list_index_of_tp_success</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="n">change_example</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">iterrows</span><span class="p">(),</span> <span class="n">y_true</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(),</span> <span class="n">y_pred</span><span class="p">):</span>
+        <span class="n">index_of_tp</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># find all True positive instance</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">get_similarities</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">negative_classify</span><span class="p">)</span>
+            <span class="n">list_index_of_tp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index_of_tp</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">results</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">X_play</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
+                <span class="n">change_example</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
+                <span class="n">new_y_true</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+                <span class="n">index_success</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># can&#39;t move</span>
+                <span class="n">X_play</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">to_list</span><span class="p">())</span>
+                <span class="n">new_y_true</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">X_play</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">to_list</span><span class="p">())</span>
+            <span class="n">new_y_true</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For </span><span class="si">{</span><span class="n">name_project</span><span class="si">}</span><span class="s2"> get </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> example change </span><span class="si">{</span><span class="n">index_success</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="nb">list</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">X_play</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">new_y_true</span></div>
+
+</pre></div>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shir Cohen<br/>
+  
+      &copy; Copyright 2022, Shir Cohen.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
