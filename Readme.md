@@ -97,7 +97,7 @@ python Main.py [0]
 2. Update NAME_PROJECT in list projects.
 3. Execute:
    ```
-   python GMain_Algorithm.py path name_model with_G
+   python Main_Algorithm.py path name_model with_G
    ```
    * Note: 
       path (int - save the number of runing)
