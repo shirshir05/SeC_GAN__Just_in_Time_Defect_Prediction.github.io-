@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
 
 class Move:
@@ -120,21 +120,6 @@ class CallFunctionWithoutParam(AddSwitchStatement):
         return {**AddSwitchStatement.affect_feature(key), **{"delta_NOS": 1, "delta_MethodInvocation": 1,
                                                              "delta_StatementExpression": 1, "ast_diff_mcAdd": 1,
                                                              "ast_diff_mcParValChange": 2, }}
-
-
-# class MethodCallSwitchCase(AddSwitchStatement):
-#     # TODO: assumption - have method that not get parameter
-#     # https://github.com/shirshir05/test_play/commit/8d781588df9f60dfc98719569991cab40bebba8d
-#     def can_apply(self, x):
-#         return "ast_diff_mcRem" in x and x["ast_diff_mcRem"] > 0
-#
-#     def affect_feature(self, key=None, x=None):
-#         return {**AddSwitchStatement.affect_feature(key), **{"ast_diff_mcRem": -1,
-#                                                              "delta_StatementExpression": 1,
-#                                                              "delta_MethodInvocation": 1,
-#                                                              "ast_diff_mcAdd": 1, "ast_diff_mcParValChange": 1,
-#                                                              "delta_NOS": 1}}
-
 
 class ChangeIfToFor(Move):
     # https://github.com/shirshir05/test_play/commit/aff68e735c71129a557ae0c2d9fca1eae3f8dd4a
@@ -406,19 +391,6 @@ class Case2IfElse(Move):
                 'ast_diff_condBranElseAdd': 3, 'ast_diff_condBranCaseAdd': -4, 'delta_LOC': -4, 'delta_LLOC': -4,
                 'delta_TLLOC': -4, 'delta_NOS': -1, 'delta_NL': 1, 'delta_TLOC': -4,
                 'used_added_lines+used_removed_lines': -4, 'used_added_lines-used_removed_lines': -4}
-
-
-# class SwitchStringEqual(Move):
-#     # rule 15
-#     def affect_feature(self, key=None, x=None):
-#         return {'delta_Literal': 1, 'delta_BinaryOperation': 2, 'ast_diff_condExpExpand': 2}
-
-
-# class VarDeclarationDividing(Move):
-#     # rule 13
-#     def affect_feature(self, key=None, x=None):
-#         return {'delta_LocalVariableDeclaration': 1, 'delta_LOC': 1, 'delta_LLOC': 1, 'delta_TLLOC': 1,
-#                 'delta_TLOC': 1, 'used_added_lines+used_removed_lines': 1, 'used_added_lines-used_removed_lines': 1}
 
 
 class LoopIfContinue2Else(Move):

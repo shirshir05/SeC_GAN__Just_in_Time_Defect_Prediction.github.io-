@@ -4,6 +4,10 @@ import pandas as pd
 
 
 def pydriller_szz(git_path, bugsfixes_json, results_path):
+    """
+    Use pydriller_szz.
+
+    """
     g = Git(git_path)
     with open(bugsfixes_json) as f:
         commits = json.loads(f.read())

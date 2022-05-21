@@ -288,27 +288,43 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="Play.play_algorithm.apply_rules">
 <span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">apply_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_diff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tp_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#apply_rules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.apply_rules" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Play.play_algorithm.calculate_cosine_similarity">
-<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">calculate_cosine_similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Play.play_algorithm.calculate_cosine_similarity" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Play.play_algorithm.calculate_manhattan_distance">
-<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">calculate_manhattan_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Play.play_algorithm.calculate_manhattan_distance" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>A function that scans all the semantic changes and executes them if they satisfy the preconditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value_diff</strong> (<em>Dict</em>) – Dict with the value need change from tp to n</p></li>
+<li><p><strong>tp_sample</strong> (<em>list</em>) – an instance that classified as TP</p></li>
+<li><p><strong>ignore</strong> (<em>bool</em>) – Indicates whether to ignore some of the features</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>success, new TP (or None if the success is False)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool, list</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Play.play_algorithm.check_valid">
 <span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">check_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_diff_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_affect_key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#check_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.check_valid" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Play.play_algorithm.distance_func">
-<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">distance_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_with_parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tp_with_parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#distance_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.distance_func" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Checking the correctness of whether the semantic change can be applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value_diff_key</strong> (<em>the number value that need change</em>) – </p></li>
+<li><p><strong>features_affect_key</strong> (<em>The numerical value that the semantic change changes</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns True if the semantic change can be performed. Otherwise returns False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Play.play_algorithm.euclidean_similarity">
@@ -317,27 +333,55 @@ title="Print to PDF"
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Play.play_algorithm.get_similarities">
-<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">get_similarities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#get_similarities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.get_similarities" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">get_similarities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_samples</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#get_similarities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.get_similarities" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Play.play_algorithm.move">
-<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.move" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_samples</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.move" title="Permalink to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>Semantically Equivalent Code Generation Semantically Equivalent Code Generation</p>
+<dl class="field-list simple">
+<dt class="field-odd">param tp_sample</dt>
+<dd class="field-odd"><p>instance that classified as TP</p>
+</dd>
+<dt class="field-even">type tp_sample</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>negative_samples</strong> (<em>list</em>) – list with instances that classified as N (TN AND FN)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Play.play_algorithm.play_game">
 <span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">play_game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#play_game"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.play_game" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The main algorithm of the process ECG.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X_test</strong> (<em>DataFrame</em>) – Test vector (Test set from the data)</p></li>
+<li><p><strong>y_true</strong> (<em>array</em>) – 1d array-like, or label indicator array / sparse matrix Ground truth (correct) target values.</p></li>
+<li><p><strong>y_pred</strong> (<em>array</em>) – 1d array-like, or label indicator array / sparse matrix Estimated targets as returned by a classifier.</p></li>
+<li><p><strong>name_project</strong> (<em>str</em>) – path to save file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X_semantics_change</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Play.play_algorithm.valu_diff_distance">
 <span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">valu_diff_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sample</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Play.play_algorithm.valu_diff_distance" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Play.play_algorithm.write">
-<span class="sig-prename descclassname"><span class="pre">Play.play_algorithm.</span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_diff</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Play/play_algorithm.html#write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Play.play_algorithm.write" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </div>

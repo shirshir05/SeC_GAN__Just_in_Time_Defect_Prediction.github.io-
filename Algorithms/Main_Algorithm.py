@@ -17,81 +17,37 @@ from torch import nn, optim
 from torch.nn import Linear, Dropout, Sequential, BCELoss
 from xgboost import XGBClassifier
 
-sys.path.insert(0, '/home/shir0/GAN_VS_RF')
 import variable
 import Algorithms.Evaluate as Evaluate
 from Play.play_algorithm import play_game
 
-tuning_rf_dict = {'cayenne': [50, 'gini', 'auto'], 'kylin': [50, 'gini', 'auto'], 'jspwiki': [50, 'gini', 'auto'],
-                  'manifoldcf': [50, 'gini', 'auto'],'manifoldcf_G': [50, 'gini', 'auto'],
-                  'commons-lang': [50, 'gini', 'auto'], 'jspwiki_G': [50, 'gini', 'auto'],
-                  'tika': [50, 'gini', 'auto'], 'kafka': [100, 'gini', 'auto'], 'kafka_G': [100, 'gini', 'auto'],
-                  'zookeeper': [800, 'gini', 'auto'],
-                  'zeppelin': [2000, 'gini', 'auto'], 'shiro': [50, 'gini', 'auto'],
-                  'logging-log4j2': [50, 'gini', 'auto'], 'activemq-artemis': [50, 'gini', 'auto'],
-                  'shindig': [500, 'gini', 'auto'], 'directory-studio': [50, 'gini', 'auto'],
-                  'tapestry-5': [500, 'gini', 'auto'], 'openjpa': [50, 'gini', 'auto'], 'knox': [100, 'gini', 'auto'],
-                  'commons-configuration': [1000, 'gini', 'auto'], 'xmlgraphics-batik': [50, 'gini', 'auto'],
-                  'mahout': [50, 'gini', 'auto'],  'mahout_G': [50, 'gini', 'auto'],
-                  'deltaspike': [50, 'gini', 'auto'],
-                  'openwebbeans': [100, 'gini', 'auto'], 'commons-collections': [50, 'gini', 'auto'],
-                  'cayenne_G': [50, 'gini', 'auto'],
-                  'kylin_G': [50, 'gini', 'auto'], 'commons-lang_G': [50, 'gini', 'auto'],
-                  'tika_G': [50, 'gini', 'auto'], 'zookeeper_G': [800, 'gini', 'auto'],
-                  'zeppelin_G': [2000, 'gini', 'auto'], 'shiro_G': [50, 'gini', 'auto'],
-                  'logging-log4j2_G': [50, 'gini', 'auto'], 'activemq-artemis_G': [50, 'gini', 'auto'],
-                  'shindig_G': [500, 'gini', 'auto'], 'directory-studio_G': [50, 'gini', 'auto'],
-                  'tapestry-5_G': [500, 'gini', 'auto'], 'openjpa_G': [50, 'gini', 'auto'],
-                  'knox_G': [100, 'gini', 'auto'], 'commons-configuration_G': [1000, 'gini', 'auto'],
-                  'xmlgraphics-batik_G': [50, 'gini', 'auto'], 'deltaspike_G': [50, 'gini', 'auto'],
-                  'openwebbeans_G': [100, 'gini', 'auto'], 'commons-collections_G': [50, 'gini', 'auto']}
+tuning_rf_dict = {'cayenne': [500, 'gini', 'auto'], 'kylin': [500, 'gini', 'auto'], 'jspwiki': [500, 'gini', 'auto'],
+                  'manifoldcf': [500, 'gini', 'auto'], 'commons-lang': [500, 'entropy', 'auto'],
+                  'tika': [500, 'gini', 'auto'], 'kafka': [500, 'gini', 'auto'], 'zookeeper': [500, 'gini', 'auto'],
+                  'zeppelin': [500, 'gini', 'auto'], 'shiro': [500, 'gini', 'auto'],
+                  'logging-log4j2': [500, 'gini', 'auto'], 'activemq-artemis': [500, 'gini', 'auto'],
+                  'shindig': [500, 'gini', 'auto'], 'directory-studio': [500, 'gini', 'auto'],
+                  'tapestry-5': [500, 'gini', 'auto'], 'openjpa': [500, 'entropy', 'auto'],
+                  'knox': [500, 'gini', 'log2'], 'commons-configuration': [500, 'gini', 'auto'],
+                  'xmlgraphics-batik': [500, 'gini', 'log2'], 'mahout': [500, 'gini', 'auto'],
+                  'deltaspike': [500, 'gini', 'auto'], 'openwebbeans': [500, 'entropy', 'auto'],
+                  'commons-collections': [500, 'gini', 'auto'],
 
-# {'cayenne': ['gini', 2, 'auto', None, 0.1, 0, True],
-#               'cayenne_G': ['gini', 2, 'auto', None, 0.1, 0, True],
-#               'kylin': ['gini', 2, 25, None, 0.1, 0, True],
-#               'kylin_G': ['gini', 2, 25, None, 0.1, 0, True],
-#               'jspwiki': ['gini', 2, 5, None, 0.1, 0, True],
-#               'jspwiki_G': ['gini', 2, 5, None, 0.1, 0, True],
-#               'manifoldcf': ['entropy', 2, None, 5, 0.1, 0, True],
-#               'manifoldcf_G': ['entropy', 2, None, 5, 0.1, 0, True],
-#               'commons-lang': ['gini', 50, None, None, 0.1, 0, True],
-#               'commons-lang_G': ['gini', 50, None, None, 0.1, 0, True],
-#               'tika': ['gini', 2, 50, 7, 0.1, 0, True],
-#               'tika_G': ['gini', 2, 50, 7, 0.1, 0, True],
-#               'kafka': ['entropy', 2, None, 7, 0.1, 0, True],
-#               'kafka_G': ['entropy', 2, None, 7, 0.1, 0, True],
-#               'zookeeper': ['gini', 3, None, 7, 0.1, 0, False],
-#               'zookeeper_G': ['gini', 3, None, 7, 0.1, 0, False],
-#               'zeppelin': ['gini', 5, None, None, 0.1, 0, False],
-#               'zeppelin_G': ['gini', 5, None, None, 0.1, 0, False],
-#               'shiro': ['gini', 2, 3, None, 0.1, 0, False],
-#               'shiro_G': ['gini', 2, 3, None, 0.1, 0, False],
-#               'logging-log4j2': ['gini', 2, 50, None, 0.1, 0, False],
-#               'logging-log4j2_G': ['gini', 2, 50, None, 0.1, 0, False],
-#               'activemq-artemis': ['gini', 2, 50, 7, 0.1, 0, False],
-#               'activemq-artemis_G': ['gini', 2, 50, 7, 0.1, 0, False],
-#               'shindig': ['gini', 2, 5, None, 0.1, 0, False],
-#               'directory-studio': ['entropy', 5, None, 3, 0.1, 0, False],
-#               'tapestry-5': ['entropy', 2, 50, 3, 0.1, 0, False],
-#               'shindig_G': ['gini', 2, 5, None, 0.1, 0, False],
-#               'directory-studio_G': ['entropy', 5, None, 3, 0.1, 0, False],
-#               'tapestry-5_G': ['entropy', 2, 50, 3, 0.1, 0, False],
-#               'openjpa': ['gini', 2, 50, None, 0.1, 0, False], 'knox': ['gini', 3, None, None, 0.1, 0, False],
-#               'commons-configuration': ['gini', 2, 'log2', 5, 0.1, 0, False],
-#               'xmlgraphics-batik': ['gini', 10, 50, None, 0.1, 0, False],
-#               'mahout': ['gini', 2, 'auto', 5, 0.1, 0, False], 'deltaspike': ['gini', 3, 25, None, 0.1, 0, False],
-#               'openjpa_G': ['gini', 2, 50, None, 0.1, 0, False], 'knox_G': ['gini', 3, None, None, 0.1, 0, False],
-#               'commons-configuration_G': ['gini', 2, 'log2', 5, 0.1, 0, False],
-#               'xmlgraphics-batik_G': ['gini', 10, 50, None, 0.1, 0, False],
-#               'mahout_G': ['gini', 2, 'auto', 5, 0.1, 0, False],
-#               'deltaspike_G': ['gini', 3, 25, None, 0.1, 0, False],
-#               'openwebbeans_G': ['entropy', 2, 50, None, 0.1, 0, False],
-#               'commons-collections_G': ['gini', 2, None, None, 0.1, 0, False],
-#               'openwebbeans': ['entropy', 2, 50, None, 0.1, 0, False],
-#               'commons-collections': ['gini', 2, None, None, 0.1, 0, False]
-#               }
+                  'cayenne_G': [500, 'gini', 'auto'],
+                  'kylin_G': [500, 'gini', 'auto'], 'jspwiki_G': [500, 'gini', 'auto'],
+                  'manifoldcf_G': [500, 'gini', 'auto'], 'commons-lang_G': [500, 'entropy', 'auto'],
+                  'tika_G': [500, 'gini', 'auto'], 'kafka_G': [500, 'gini', 'auto'], 'zookeeper_G': [500, 'gini', 'auto'],
+                  'zeppelin_G': [500, 'gini', 'auto'], 'shiro_G': [500, 'gini', 'auto'],
+                  'logging-log4j2_G': [500, 'gini', 'auto'], 'activemq-artemis_G': [500, 'gini', 'auto'],
+                  'shindig_G': [500, 'gini', 'auto'], 'directory-studio_G': [500, 'gini', 'auto'],
+                  'tapestry-5_G': [500, 'gini', 'auto'], 'openjpa_G': [500, 'entropy', 'auto'],
+                  'knox_G': [500, 'gini', 'log2'], 'commons-configuration_G': [500, 'gini', 'auto'],
+                  'xmlgraphics-batik_G': [500, 'gini', 'log2'], 'mahout_G': [500, 'gini', 'auto'],
+                  'deltaspike_G': [500, 'gini', 'auto'], 'openwebbeans_G': [500, 'entropy', 'auto'],
+                  'commons-collections_G': [500, 'gini', 'auto']
 
-# n_estimators_old =
+
+                  }
 
 tuning_lr_dict = {'cayenne': ['l2', 'liblinear', 0.001], 'kylin': ['l2', 'saga', 0.001],
                   'jspwiki': ['l2', 'newton-cg', 0.001], 'manifoldcf': ['l1', 'saga', 0.001],
@@ -116,55 +72,6 @@ tuning_lr_dict = {'cayenne': ['l2', 'liblinear', 0.001], 'kylin': ['l2', 'saga',
                   'commons-collections_G': ['l2', 'saga', 0.001], 'cayenne_G': ['l2', 'liblinear', 0.001],
                   'jspwiki_G': ['l2', 'newton-cg', 0.001], 'manifoldcf_G': ['l1', 'saga', 0.001],
                   'kafka_G': ['l1', 'saga', 0.001], 'mahout_G': ['l1', 'saga', 0.001]}
-tuning_xgb_dict = {'cayenne': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'cayenne_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'kylin': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'jspwiki': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'manifoldcf': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'commons-lang': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'tika': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'kafka': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   "zookeeper": ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'zeppelin': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'shiro': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'logging-log4j2': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'activemq-artemis': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'shindig': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'directory-studio': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'tapestry-5': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'openjpa': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'knox': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'commons-configuration': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'xmlgraphics-batik': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'mahout': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'deltaspike': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'openwebbeans': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'commons-collections': ['deviance', 0.01, 500, 'friedman_mse', 2],
-
-                   'kylin_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'jspwiki_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'manifoldcf_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'commons-lang_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'tika_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'kafka_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   "zookeeper_G": ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'zeppelin_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'shiro_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'logging-log4j2_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'activemq-artemis_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'shindig_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'directory-studio_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'tapestry-5_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'openjpa_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'knox_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'commons-configuration_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'xmlgraphics-batik_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'mahout_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'deltaspike_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'openwebbeans_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-                   'commons-collections_G': ['deviance', 0.01, 500, 'friedman_mse', 2],
-
-                   }
 
 tuning_nb_dict = {'cayenne': [0.657933224657568], 'kylin': [0.2848035868435802], 'jspwiki': [0.15199110829529336],
                   'manifoldcf': [0.0533669923120631], 'commons-lang': [0.001873817422860383],
@@ -180,26 +87,9 @@ tuning_nb_dict = {'cayenne': [0.657933224657568], 'kylin': [0.2848035868435802],
 space_lr = {'penalty': ['l1', 'l2', 'elasticnet'], 'solver': ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'],
             "l1_ratio": [0.001, 0.01, 0.1, 0.5, 0.3]}
 
-space_xgb = {
-    "loss": ['deviance', 'exponential'],
-    'learning_rate': [0.01],  # 0.0001, 0.001, , 0.1, 0.2, 0.3
-    'n_estimators': [500],  # 25, 50, 100,  , 1000
-    'criterion': ['friedman_mse'],  # , 'squared_error', 'mse', 'mae'
-    "min_samples_split": [2]  # , 5, 10, 0.1
-}
-
 space_rf = {
-    'criterion': ['gini', 'entropy'],
-    'n_estimators': [2, 3, 5, 10, 25, 50, 100, 1000],
-    'max_features': [3, 5, 10, 25, 50, 'auto', 'log2', None],
-    'max_depth': [None, 3, 5, 7, 10, 100, 1000],
-    'min_samples_split': [0.1],  # 2, 5, 10,
-    'min_impurity_decrease': [0],  # 1e-7, 1e-6, 1e-5, 1e-4, 1e-3,
-    'warm_start': [False]
-    # "n_estimators": [50,  100, 500, 800, 1000, 1500, 2000],  # 50,
-    # "criterion": ["gini", "entropy"], "max_features": ["auto", "sqrt", "log2"]
-    # "criterion": ["gini"], "max_features": ["auto"]
-}
+    "n_estimators": [500, 2000],
+    "criterion": ["gini", "entropy"], "max_features": ["auto", "sqrt", "log2"]}
 
 space_nb = {'var_smoothing': np.logspace(0, -9, num=100)}
 
@@ -217,15 +107,13 @@ def init_ctgna(two_g=True):
     """
     The function reads the file containing the faked instances.
 
-    :param two_g: A parameter that specifies whether to use information from one G or two G.
-    A default value is True and therefore two G are used.
+    :param two_g: A parameter that specifies whether to use information from one G or two G. A default value is True and therefore two G are used.
     :type bool
-    :return: data_from_G (X) , y_from_G (Y)
+
+    :returns: data_from_G (X) , y_from_G (Y)
     :rtype: DataFrame, Series
 
-    .. note::
-            You must create the fake data using the generator from file Generate_fake.py
-
+    .. note:: You must create the fake data using the generator from file Generate_fake.py
     """
     if two_g:
         data = pd.read_csv(os.path.join(NAME_PROJECT, "train_test", f"new_fake_data_{p}_bug_2000.csv"))  # _1000_512
@@ -248,7 +136,7 @@ def read_data():
     """
     The function reads the data after it has completed the preprocessing process.
 
-    :return: X_train, X_test, X_valid, y_train, y_test, y_valid
+    :returns: X_train, X_test, X_valid, y_train, y_test, y_valid
     :rtype: DataFrame,, DataFrame, DataFrame, Series, Series, Series
 
     .. note:: You must create the train, validation and test set using from file main_create_data.py
@@ -286,18 +174,14 @@ def tuning(x_val, y_val, space, estimator):
     :param x_val: Training vector (Validation set from the data)
     :type x_val: DataFrame
     :param y_val: Target relative to X for classification
-    :type
-    y_val: Series
-    :param space: Dictionary with parameters names (str) as keys and lists of parameter settings to try
-    as values, or a list of such dictionaries, in which case the grids spanned by each dictionary in the list are
-    explored. This enables searching over any sequence of parameter settings.
-    :type space : Dictionary(str,
-    list)
+    :type y_val: Series
+    :param space: Dictionary with parameters names (str) as keys and lists of parameter settings to try as values, or a list of such dictionaries, in which case the grids spanned by each dictionary in the list are explored. This enables searching over any sequence of parameter settings.
+    :type space: Dictionary(str, list)
     :param estimator: Classifier - this is assumed to implement the scikit-learn estimator interface.
     :type estimator: object
-    :return: Parameter setting that gave the best results on the hold out data.
-    :rtype: Dictionary
 
+    :return Parameter setting that gave the best results on the hold out data.
+    :rtype: Dictionary
     """
     cv_inner = StratifiedKFold(n_splits=10, shuffle=True, random_state=42)
     search = GridSearchCV(estimator, space, scoring='f1', n_jobs=-1, cv=cv_inner, refit=True)
@@ -307,11 +191,7 @@ def tuning(x_val, y_val, space, estimator):
 
 def train(X_train, y_train, X_test, y_test, model):
     """
-    The main function that performs the training process. The function extracts the evaluation metrics after the
-    training process on the test set. In addition, the function executes the ECG algorithm and evaluates the model on
-    X_semantic_change.
-    The function also calculates the importances of the features and saves them in the results folder in a file named
-    importances_path.
+    The main function that performs the training process. The function extracts the evaluation metrics after the training process on the test set. In addition, the function executes the ECG algorithm and evaluates the model on X_semantic_change. The function also calculates the importances of the features and saves them in the results folder in a file named importances_path.
 
     :param X_train: Training vector (Training set from the data)
     :type X_train: DataFrame
@@ -374,6 +254,7 @@ def train(X_train, y_train, X_test, y_test, model):
 def write_results(scores, play_scores, importances=[]):
     """
     Write the results to a file.
+
     :param scores:
     :type scores: list
     :param play_scores:
@@ -398,8 +279,8 @@ class Discriminator(nn.Module):
 
     def __init__(self, commit_shape):
         """
-        A constructor that initializes the neural network.
-        initializes is performed according to the parameters in the dictionary tuning_D.
+        A constructor that initializes the neural network. initializes is performed according to the parameters in the dictionary tuning_D.
+
         :param commit_shape: Number of columns in data.
         :type commit_shape: int
         :rtype: object
@@ -431,10 +312,8 @@ class Discriminator(nn.Module):
 
 def generate_batch_real():
     """
-    .. generate_batch_real:
-
     Random selection of samples from the train set for a single batch.
-    The batch size is determined by the keyword "batch_size" in the dictionary tuning_D (default 30).. The percentage of instances
+    The batch size is determined by the keyword "batch_size" in the dictionary tuning_D (default 30). The percentage of instances
     that did not induce a defect is defined by the keyword "number_commit_without_bug" (default 0.8).
 
     :return: [X_real, labels]
@@ -479,13 +358,11 @@ def train_iteration_D_real_data(write=False):
 
 def generate_batch_fake():
     """
-    .. generate_batch_fake:
-
     Random selection of samples from the fake data set for a single batch.
     The batch size is determined by the keyword "batch_size" in the dictionary tuning_D (default 30).
     The percentage of instances that did not induce a defect is defined by the keyword "number_commit_without_bug" (default 0.8).
 
-    :return: [X_fake, labels]
+    :returns: [X_fake, labels]
     :rtype: DataFrame, Series
     """
     batch_size_G = tuning_D[name_G]['batch_size_G']
@@ -555,15 +432,16 @@ if __name__ == '__main__':
         'commons-lang',
         'tika',
         'kafka',
-        'zookeeper', 'zeppelin', 'shiro', 'logging-log4j2',
-        'activemq-artemis', 'shindig',
+        'zookeeper', 'zeppelin', 'shiro',
+        'logging-log4j2',
+        'activemq-artemis',
+        'shindig',
         'directory-studio', 'tapestry-5',
         'openjpa', 'knox',
         'commons-configuration',
         'xmlgraphics-batik', 'mahout',
         'deltaspike',
         'openwebbeans', "commons-collections"
-
     ]
     path = sys.argv[1]
     name_model = sys.argv[2]
@@ -599,9 +477,6 @@ if __name__ == '__main__':
                     X_train, y_train = sm.fit_resample(X_train, y_train)
                     X_train = pd.concat([X_train, data_from_G])
                     y_train = list(y_train) + [i for i in y_from_G]
-                    # if "RF" not in name_model:
-                    #     X_train = pd.concat([X_train, data_from_G])
-                    #     y_train = list(y_train) + [i for i in y_from_G]
                 else:
                     X_CTGAN = np.expand_dims(data_from_G, axis=-1)
                     Y_CTGAN = np.expand_dims(y_from_G, axis=1)
@@ -616,26 +491,8 @@ if __name__ == '__main__':
             if "RF" in name_model:
                 if tuning_rf_dict.get(project, 0) == 0:
                     param = tuning(X_valid, y_valid, space_rf, RandomForestClassifier(random_state=42))
-                    tuning_rf_dict[project] = [param['criterion'], param['n_estimators'], param['max_features'],
-                                               param['max_depth'], param['min_samples_split'],
-                                               param['min_impurity_decrease'], param['warm_start']]
+                    tuning_rf_dict[project] = [param['n_estimators'], param['criterion'],  param['max_features']]
                     print(tuning_rf_dict)
-                # tuning_rf_dict[project][4] = 2  # min_samples_split (default)
-                # tuning_rf_dict[project][2] = 'auto'  # max_features (default)
-                # tuning_rf_dict[project][6] = False  # warm_start
-                # tuning_rf_dict[project][1] = 500  # n_estimators
-                # # tuning_rf_dict[project][3] = 500  # max_depth
-                # # tuning_rf_dict[project][0] = 'entropy'
-                # tuning_rf_dict[project][2] = 'log2'
-                # model = RandomForestClassifier(random_state=42,
-                #                                criterion=tuning_rf_dict[project][0],
-                #                                n_estimators=tuning_rf_dict[project][1],
-                #                                max_features=tuning_rf_dict[project][2],  # default="auto"
-                #                                max_depth=tuning_rf_dict[project][3],  # default=None
-                #                                min_samples_split=tuning_rf_dict[project][4],  # default=2
-                #                                min_impurity_decrease=tuning_rf_dict[project][5],  # default=0.0
-                #                                warm_start=tuning_rf_dict[project][6])  # default=False
-                # tuning_rf_dict[project][1] = 'entropy'
                 model = RandomForestClassifier(random_state=42, n_estimators=tuning_rf_dict[project][0],
                                                criterion=tuning_rf_dict[project][1],
                                                max_features=tuning_rf_dict[project][2])
@@ -646,26 +503,6 @@ if __name__ == '__main__':
 
                 model = LogisticRegression(random_state=42, penalty=tuning_lr_dict[project][0],
                                            solver=tuning_lr_dict[project][1], l1_ratio=tuning_lr_dict[project][2])
-            elif "XGB" in name_model:
-                if tuning_xgb_dict.get(project, 0) == 0:
-                    param = tuning(X_valid, y_valid, space_xgb,
-                                   XGBClassifier(verbosity=0, silent=True, use_label_encoder=False))
-                    tuning_xgb_dict[project] = [param['loss'], param['learning_rate'], param['n_estimators'],
-                                                param['criterion'], param['min_samples_split']]
-
-                tuning_xgb_dict[project][1] = 0.001
-                model = XGBClassifier(random_state=42, loss=tuning_xgb_dict[project][0],
-                                      learning_rate=tuning_xgb_dict[project][1],
-                                      n_estimators=tuning_xgb_dict[project][2], criterion=tuning_xgb_dict[project][3],
-                                      min_samples_split=tuning_xgb_dict[project][4], verbosity=0, silent=True,
-                                      use_label_encoder=False)
-                print(tuning_xgb_dict[project])
-
-            elif "NB" in name_model:
-                if tuning_nb_dict.get(project, 0) == 0:
-                    param = tuning(X_valid, y_valid, space_nb, GaussianNB())
-                    tuning_nb_dict[project] = [param['var_smoothing']]
-                model = GaussianNB(var_smoothing=tuning_nb_dict[project][0])
             else:  # D
                 X = np.expand_dims(X_train, axis=-1)
                 Y = np.expand_dims(y_train, axis=1)
@@ -692,7 +529,3 @@ if __name__ == '__main__':
         except Exception as e:
             print(e)
             pass
-    print(tuning_xgb_dict)
-    # print(tuning_rf_dict)
-    # print(tuning_lr_dict)
-    # print(tuning_nb_dict)

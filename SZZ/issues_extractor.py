@@ -318,8 +318,7 @@ def extract_json(repo_path, jira_key, repo_full_name, out_json, out_non_tests_js
     """
     Create file with fix_commit_hash and issue.
 
-    :param repo_path: The path of the folder where the project is located. The folder must contain a git
-    folder.
+    :param repo_path: The path of the folder where the project is located. The folder must contain a git folder.
     :type repo_path: str
     :param jira_key: The key issue of the project as it appears in Jira(https://issues.apache.org/jira/secure/Dashboard.jspa)
     :type jira_key: str
@@ -389,8 +388,7 @@ def main_szz(location_github_project, name_github, key_issue, repo_full_name, na
     At the end of the function, a file is written in the folder "name_dir" that contains the modification that induced
     defect.
 
-    :param location_github_project: The path of the folder where the project is located. The folder must contain a git
-    folder.
+    :param location_github_project: The path of the folder where the project is located. The folder must contain a git folder.
     :type location_github_project: str
     :param name_github: Project name as it appears on github
     :type name_github: str

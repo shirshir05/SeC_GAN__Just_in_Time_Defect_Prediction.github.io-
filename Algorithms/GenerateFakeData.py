@@ -3,20 +3,13 @@ import os
 import pickle
 import numpy as np
 import io
-import sys
-from sdv.metrics.tabular import BNLogLikelihood, BNLikelihood, SVCDetection, BinaryDecisionTreeClassifier, \
-    LogisticDetection, SVCDetection, BinaryDecisionTreeClassifier, BinaryAdaBoostClassifier, \
+from sdv.metrics.tabular import LogisticDetection, SVCDetection, BinaryDecisionTreeClassifier, BinaryAdaBoostClassifier, \
     BinaryLogisticRegression, BinaryMLPClassifier, MulticlassDecisionTreeClassifier, MulticlassMLPClassifier, \
-    LinearRegression, MLPRegressor, GMLogLikelihood, CSTest, KSTest, KSTestExtended, CategoricalCAP, \
-    CategoricalZeroCAP, CategoricalGeneralizedCAP, CategoricalNB, CategoricalKNN, CategoricalRF, CategoricalSVM, \
-    CategoricalEnsemble, NumericalLR, NumericalMLP, NumericalSVR, NumericalRadiusNearestNeighbor, ContinuousKLDivergence \
-    , DiscreteKLDivergence
+    LinearRegression, MLPRegressor, GMLogLikelihood, KSTest, ContinuousKLDivergence
 
 import torch
 from sdv.tabular import CTGAN
 import pandas as pd
-
-sys.path.insert(0, '/home/shir0/GAN_VS_RF')
 import variable
 
 metrics = [
@@ -105,7 +98,6 @@ if __name__ == '__main__':
                 'zookeeper', 'zeppelin', 'shiro', 'logging-log4j2', 'activemq-artemis', 'shindig',
                 'directory-studio', 'tapestry-5', 'openjpa', 'knox', 'commons-configuration', 'xmlgraphics-batik',
                 'mahout', 'deltaspike', 'openwebbeans', "commons-collections"]
-    projects = ['cayenne', 'knox', 'xmlgraphics-batik', 'mahout', 'deltaspike', 'openwebbeans', 'commons-collections']
     for project in projects:
         try:
             NAME_PROJECT = "../Data/" + project
@@ -116,28 +108,23 @@ if __name__ == '__main__':
             X_train = X_train[features_check + ['commit insert bug?']]
 
             # TODO: 2 Generators
-            # number_nbug = X_train.iloc[np.where(X_train['commit insert bug?'] == 0)[0]]
-            # number_bug = X_train.iloc[np.where(X_train['commit insert bug?'] == 1)[0]]
-            #
-            # synthetic_nbug = create_data(f'two_G/CTGAN_{project}_nbug_500_512.pkl', number_nbug, "nbug_500_512")
-            # synthetic_bug = create_data(f'two_G/CTGAN_{project}_bug_1000_512.pkl', number_bug, "bug_1000_512")
-            # all_data = pd.concat([synthetic_nbug, synthetic_bug])
+            number_nbug = X_train.iloc[np.where(X_train['commit insert bug?'] == 0)[0]]
+            number_bug = X_train.iloc[np.where(X_train['commit insert bug?'] == 1)[0]]
 
-            # TODO: 1 Generator
-            all_data = create_data(f'Generator_{project}_1000_512.pkl', X_train, "all_1000_512")
+            synthetic_nbug = create_data(f'two_G/CTGAN_{project}_nbug.pkl', number_nbug, "nbug")
+            synthetic_bug = create_data(f'two_G/CTGAN_{project}_bug_2000.pkl', number_bug, "bug_2000")
+            all_data = pd.concat([synthetic_nbug, synthetic_bug])
 
             eval_metric_all_data(all_data, X_train, "all")
         except Exception as e:
             print(e)
             pass
     print(eval_CTGAN)
-    with open(os.path.join("..", "Data", "eval_CTGAN_all_1000_512.csv"), "a") as f:
+    with open(os.path.join("..", "Data", "eval_CTGAN_all.csv"), "a") as f:
         writer = csv.writer(f)
         writer.writerow(['Name project', 'name', 'raw_score', 'normalized_score', 'min_value', 'max_value', 'goal',
                          'error'])
         for key in eval_CTGAN:
-            # f.write(str(key))
-            # f.write(",")
             for i in eval_CTGAN[key]:
                 f.write(str(key))
                 f.write(",")

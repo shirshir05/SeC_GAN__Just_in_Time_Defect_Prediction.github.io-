@@ -4,7 +4,9 @@ import pandas as pd
 import numpy as np
 import os
 import torch
+
 import variable
+
 torch.manual_seed(420)
 np.random.seed(420)
 
@@ -28,6 +30,8 @@ if __name__ == '__main__':
     project = sys.argv[1]
     NAME_PROJECT = f"../Data/{project}/train_test/train_" + project + ".csv"
     print(NAME_PROJECT)
+    if not os.path.exists(os.path.join("..", "Data", project, "CTGAN")):
+        os.mkdir(os.path.join("..", "Data", project, "CTGAN"))
 
     df = pd.read_csv(NAME_PROJECT)
     df = df.iloc[:, 1:]
@@ -51,6 +55,7 @@ if __name__ == '__main__':
     model._metadata_fitted = True
     model.fit(x_one_only)
     model.save(os.path.join("model", f'CTGAN_{project}_bug_{dict_var["epochs"]}_.pkl'))
+    model.save(os.path.join("..", "Data", project, "CTGAN", f'CTGAN_{project}_bug_{dict_var["epochs"]}_.pkl'))
 
     # model without bug
     dict_var['epochs'] = 500
@@ -59,3 +64,4 @@ if __name__ == '__main__':
     model._metadata_fitted = True
     model.fit(x_zero_only)
     model.save(os.path.join("model", f'CTGAN_{project}_nbug_{dict_var["epochs"]}_.pkl'))
+    model.save(os.path.join("..", "Data", project, "CTGAN", f'CTGAN_{project}_bug_{dict_var["epochs"]}_.pkl'))

@@ -296,64 +296,58 @@ title="Print to PDF"
 <div class="section" id="module-Algorithms.Evaluate">
 <span id="algorithms-evaluate-module"></span><h2>Algorithms.Evaluate module<a class="headerlink" href="#module-Algorithms.Evaluate" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.define_threshold">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">define_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions_proba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#define_threshold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.define_threshold" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.define_threshold_tesnsor">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">define_threshold_tesnsor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions_proba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#define_threshold_tesnsor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.define_threshold_tesnsor" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="Algorithms.Evaluate.evaluate">
 <span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NAME_PROJECT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">play</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CTGAN</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.evaluate" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>A function that performs the evaluation on a deep learning model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – path save file</p></li>
+<li><p><strong>X_test</strong> (<em>DataFrame</em>) – Test vector (Test set from the data)</p></li>
+<li><p><strong>scaler</strong> (<em>StandardScaler</em>) – Standard Scaler object to do the transform</p></li>
+<li><p><strong>y_test</strong> (<em>Series</em>) – Target relative to X_test</p></li>
+<li><p><strong>D</strong> (<em>nn.Module</em>) – class represents a neural network.</p></li>
+<li><p><strong>NAME_PROJECT</strong> (<em>str</em>) – path to save file</p></li>
+<li><p><strong>play</strong> (<em>bool</em>) – bool indicate if run ECG process</p></li>
+<li><p><strong>project</strong> (<em>str</em>) – name project</p></li>
+<li><p><strong>threshold</strong> (<em>double</em>) – The threshold define the classes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>scores, scores_play -  Dict with this metrics (f1_score, precision_score, recall_score, roc_auc_score, accuracy_score, pr_auc_score, tp, fn, tn and fp.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict, Dict</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Algorithms.Evaluate.evaluate_on_test">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">evaluate_on_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicitons_proba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#evaluate_on_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.evaluate_on_test" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.pca_">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">pca_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fake</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#pca_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.pca_" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.plot">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.plot" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.plot_epochs_metric">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">plot_epochs_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'loss'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#plot_epochs_metric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.plot_epochs_metric" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.plot_old">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">plot_old</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#plot_old"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.plot_old" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.read_data">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">read_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#read_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.read_data" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.save_logs">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">save_logs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_true_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#save_logs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.save_logs" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.show_plot">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">show_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#show_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.show_plot" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Algorithms.Evaluate.visualization">
-<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">visualization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_bug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_not_bug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G_bug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G_not_bug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#visualization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.visualization" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">Algorithms.Evaluate.</span></span><span class="sig-name descname"><span class="pre">evaluate_on_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Evaluate.html#evaluate_on_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Evaluate.evaluate_on_test" title="Permalink to this definition">#</a></dt>
+<dd><p>The function calculates the metrics on the test set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> (<em>array</em>) – 1d array-like, or label indicator array / sparse matrix Ground truth (correct) target values.</p></li>
+<li><p><strong>y_pred</strong> (<em>array</em>) – 1d array-like, or label indicator array / sparse matrix Estimated targets as returned by a classifier.</p></li>
+<li><p><strong>classes</strong> (<em>list of classes</em>) – [0, 1]</p></li>
+</ul>
+</dd>
+</dl>
+<p>:param proba:1d array-like, or label indicator array / sparse matrix Estimated targets as returned by a classifier.
+:type proba: array
+:param tensor: if use model that return only proba (default False)
+:type tensor: bool</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>scores with the metrics (f1_score, precision_score, recall_score, roc_auc_score, accuracy_score, pr_auc_score, tp, fn, tn and fp.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 <div class="section" id="module-Algorithms.GenerateFakeData">
@@ -439,7 +433,7 @@ The percentage of instances that did not induce a defect is defined by the keywo
 <dt class="sig sig-object py" id="Algorithms.Main_Algorithm.generate_batch_real">
 <span class="sig-prename descclassname"><span class="pre">Algorithms.Main_Algorithm.</span></span><span class="sig-name descname"><span class="pre">generate_batch_real</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Main_Algorithm.html#generate_batch_real"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Main_Algorithm.generate_batch_real" title="Permalink to this definition">#</a></dt>
 <dd><p>Random selection of samples from the train set for a single batch.
-The batch size is determined by the keyword “batch_size” in the dictionary tuning_D (default 30).. The percentage of instances
+The batch size is determined by the keyword “batch_size” in the dictionary tuning_D (default 30). The percentage of instances
 that did not induce a defect is defined by the keyword “number_commit_without_bug” (default 0.8).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -457,13 +451,18 @@ that did not induce a defect is defined by the keyword “number_commit_without_
 <dd><p>The function reads the file containing the faked instances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>two_g</strong> – A parameter that specifies whether to use information from one G or two G.</p>
+<dd class="field-odd"><p><strong>two_g</strong> – A parameter that specifies whether to use information from one G or two G. A default value is True and therefore two G are used.</p>
 </dd>
 </dl>
-<p>A default value is True and therefore two G are used.
-:type bool
-:return: data_from_G (X) , y_from_G (Y)
-:rtype: DataFrame, Series</p>
+<p>:type bool</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>data_from_G (X) , y_from_G (Y)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>DataFrame, Series</p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must create the fake data using the generator from file Generate_fake.py</p>
@@ -497,11 +496,7 @@ that did not induce a defect is defined by the keyword “number_commit_without_
 <dl class="py function">
 <dt class="sig sig-object py" id="Algorithms.Main_Algorithm.train">
 <span class="sig-prename descclassname"><span class="pre">Algorithms.Main_Algorithm.</span></span><span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Main_Algorithm.html#train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Main_Algorithm.train" title="Permalink to this definition">#</a></dt>
-<dd><p>The main function that performs the training process. The function extracts the evaluation metrics after the
-training process on the test set. In addition, the function executes the ECG algorithm and evaluates the model on
-X_semantic_change.
-The function also calculates the importances of the features and saves them in the results folder in a file named
-importances_path.</p>
+<dd><p>The main function that performs the training process. The function extracts the evaluation metrics after the training process on the test set. In addition, the function executes the ECG algorithm and evaluates the model on X_semantic_change. The function also calculates the importances of the features and saves them in the results folder in a file named importances_path.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -560,33 +555,29 @@ This function use in <span class="xref std std-ref">generate_batch_real</span> t
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x_val</strong> (<em>DataFrame</em>) – Training vector (Validation set from the data)</p></li>
-<li><p><strong>y_val</strong> – Target relative to X for classification</p></li>
+<li><p><strong>y_val</strong> (<em>Series</em>) – Target relative to X for classification</p></li>
+<li><p><strong>space</strong> (<em>Dictionary</em><em>(</em><em>str</em><em>, </em><em>list</em><em>)</em>) – Dictionary with parameters names (str) as keys and lists of parameter settings to try as values, or a list of such dictionaries, in which case the grids spanned by each dictionary in the list are explored. This enables searching over any sequence of parameter settings.</p></li>
+<li><p><strong>estimator</strong> (<em>object</em>) – Classifier - this is assumed to implement the scikit-learn estimator interface.</p></li>
 </ul>
 </dd>
 </dl>
-<p>:type
-y_val: Series
-:param space: Dictionary with parameters names (str) as keys and lists of parameter settings to try
-as values, or a list of such dictionaries, in which case the grids spanned by each dictionary in the list are
-explored. This enables searching over any sequence of parameter settings.
-:type space : Dictionary(str,
-list)
-:param estimator: Classifier - this is assumed to implement the scikit-learn estimator interface.
-:type estimator: object
-:return: Parameter setting that gave the best results on the hold out data.
+<p>:return Parameter setting that gave the best results on the hold out data.
 :rtype: Dictionary</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Algorithms.Main_Algorithm.write_results">
 <span class="sig-prename descclassname"><span class="pre">Algorithms.Main_Algorithm.</span></span><span class="sig-name descname"><span class="pre">write_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">play_scores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importances</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Algorithms/Main_Algorithm.html#write_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Algorithms.Main_Algorithm.write_results" title="Permalink to this definition">#</a></dt>
-<dd><p>Write the results to a file.
-:param scores:
-:type scores: list
-:param play_scores:
-:type play_scores: list
-:param importances:
-:type importances: list</p>
+<dd><p>Write the results to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scores</strong> (<em>list</em>) – </p></li>
+<li><p><strong>play_scores</strong> (<em>list</em>) – </p></li>
+<li><p><strong>importances</strong> (<em>list</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

@@ -344,19 +344,16 @@ title="Print to PDF"
 <dd><p>Create file with fix_commit_hash and issue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>repo_path</strong> – The path of the folder where the project is located. The folder must contain a git</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repo_path</strong> (<em>str</em>) – The path of the folder where the project is located. The folder must contain a git folder.</p></li>
+<li><p><strong>jira_key</strong> (<em>str</em>) – The key issue of the project as it appears in Jira(<a class="reference external" href="https://issues.apache.org/jira/secure/Dashboard.jspa">https://issues.apache.org/jira/secure/Dashboard.jspa</a>)</p></li>
+<li><p><strong>repo_full_name</strong> (<em>str</em>) – The full name of the project listed on github (default: with apache)</p></li>
+<li><p><strong>out_json</strong> (<em>str</em>) – Name a folder for storing the files of the modification that induced defect</p></li>
+<li><p><strong>out_non_tests_json</strong> – Name a folder for storing the files of the modification that induced defect (without</p></li>
+</ul>
 </dd>
 </dl>
-<p>folder.
-:type repo_path: str
-:param jira_key: The key issue of the project as it appears in Jira(<a class="reference external" href="https://issues.apache.org/jira/secure/Dashboard.jspa">https://issues.apache.org/jira/secure/Dashboard.jspa</a>)
-:type jira_key: str
-:param repo_full_name: The full name of the project listed on github (default: with apache)
-:type repo_full_name: str
-:param out_json: Name a folder for storing the files of the modification that induced defect
-:type out_json: str
-:param out_non_tests_json: Name a folder for storing the files of the modification that induced defect (without
-modification that change only test file).
+<p>modification that change only test file).
 :type out_non_tests_json: str</p>
 </dd></dl>
 
@@ -407,19 +404,15 @@ At the end of the function, a file is written in the folder “name_dir” that 
 defect.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>location_github_project</strong> – The path of the folder where the project is located. The folder must contain a git</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>location_github_project</strong> (<em>str</em>) – The path of the folder where the project is located. The folder must contain a git folder.</p></li>
+<li><p><strong>name_github</strong> (<em>str</em>) – Project name as it appears on github</p></li>
+<li><p><strong>key_issue</strong> (<em>str</em>) – The key issue of the project as it appears in Jira(<a class="reference external" href="https://issues.apache.org/jira/secure/Dashboard.jspa">https://issues.apache.org/jira/secure/Dashboard.jspa</a>)</p></li>
+<li><p><strong>repo_full_name</strong> (<em>str</em>) – The full name of the project listed on github (default: with apache)</p></li>
+<li><p><strong>name_dir</strong> (<em>str</em>) – Name a folder for storing the files of the modification that induced defect</p></li>
+</ul>
 </dd>
 </dl>
-<p>folder.
-:type location_github_project: str
-:param name_github: Project name as it appears on github
-:type name_github: str
-:param key_issue: The key issue of the project as it appears in Jira(<a class="reference external" href="https://issues.apache.org/jira/secure/Dashboard.jspa">https://issues.apache.org/jira/secure/Dashboard.jspa</a>)
-:type key_issue: str
-:param repo_full_name: The full name of the project listed on github (default: with apache)
-:type repo_full_name: str
-:param name_dir: Name a folder for storing the files of the modification that induced defect
-:type name_dir: str</p>
 </dd></dl>
 
 <dl class="py function">
@@ -448,7 +441,8 @@ defect.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="SZZ.pydriller_szz.pydriller_szz">
 <span class="sig-prename descclassname"><span class="pre">SZZ.pydriller_szz.</span></span><span class="sig-name descname"><span class="pre">pydriller_szz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">git_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bugsfixes_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/SZZ/pydriller_szz.html#pydriller_szz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SZZ.pydriller_szz.pydriller_szz" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Use pydriller_szz.</p>
+</dd></dl>
 
 </div>
 <div class="section" id="module-SZZ">

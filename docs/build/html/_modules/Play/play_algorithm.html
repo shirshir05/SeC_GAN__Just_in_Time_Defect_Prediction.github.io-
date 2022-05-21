@@ -4,51 +4,175 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play.play_algorithm &#8212; SeC-GAN 1.1 documentation</title>
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-   
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-  </head><body>
-  
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SeC-GAN 1.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
           
 
-          <div class="body" role="main">
-            
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
   <h1>Source code for Play.play_algorithm</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">csv</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">random</span>
-
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-
+<span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">importlib</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">cityblock</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
 <span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">euclidean</span>
-
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;/home/shir0/GAN_VS_RF&#39;</span><span class="p">)</span>
 
 <span class="n">IGNORE</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;delta_TNLPM&#39;</span><span class="p">,</span>
@@ -57,21 +181,22 @@
     <span class="s2">&quot;delta_Statement&quot;</span><span class="p">,</span> <span class="s1">&#39;delta_ContinueStatement&#39;</span><span class="p">,</span> <span class="s1">&#39;delta_SwitchStatement&#39;</span><span class="p">,</span>
     <span class="s1">&#39;delta_NLE&#39;</span>
 <span class="p">]</span>
-<span class="n">calculate_manhattan_distance</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tp</span><span class="p">,</span> <span class="n">n_sample</span><span class="p">:</span> <span class="p">[</span><span class="n">cityblock</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">tp</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">n_sample</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()]</span>
-<span class="n">calculate_cosine_similarity</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tp</span><span class="p">,</span> <span class="n">n_sample</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">cosine_similarity</span><span class="p">([</span><span class="n">tp</span><span class="p">],</span> <span class="n">n_sample</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">euclidean_similarity</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tp</span><span class="p">,</span> <span class="n">n_sample</span><span class="p">:</span> <span class="p">[</span><span class="n">euclidean</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">tp</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">n_sample</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()]</span>
 <span class="n">valu_diff_distance</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tp</span><span class="p">,</span> <span class="n">n_sample</span><span class="p">:</span> <span class="p">[</span><span class="n">n_sample</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">tp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tp</span> <span class="k">if</span> <span class="n">tp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">n_sample</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
 
 
-<div class="viewcode-block" id="distance_func"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.distance_func">[docs]</a><span class="k">def</span> <span class="nf">distance_func</span><span class="p">(</span><span class="n">tp</span><span class="p">,</span> <span class="n">n_sample</span><span class="p">,</span> <span class="n">negative_with_parent</span><span class="p">,</span> <span class="n">tp_with_parent</span><span class="p">):</span>
-    <span class="n">ans_distance</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">n_sample</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-        <span class="n">n_parent</span> <span class="o">=</span> <span class="n">negative_with_parent</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-        <span class="n">ans_distance</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">sum</span><span class="p">((</span><span class="n">row</span> <span class="o">-</span> <span class="n">tp</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">cityblock</span><span class="p">(</span><span class="n">n_parent</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">tp_with_parent</span><span class="o">.</span><span class="n">values</span><span class="p">())))))</span>
-    <span class="k">return</span> <span class="n">ans_distance</span></div>
-
-
 <div class="viewcode-block" id="check_valid"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.check_valid">[docs]</a><span class="k">def</span> <span class="nf">check_valid</span><span class="p">(</span><span class="n">value_diff_key</span><span class="p">,</span> <span class="n">features_affect_key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Checking the correctness of whether the semantic change can be applied.</span>
+
+<span class="sd">    :param value_diff_key:</span>
+<span class="sd">    :type value_diff_key: the number value that need change</span>
+<span class="sd">    :param features_affect_key:</span>
+<span class="sd">    :type features_affect_key: The numerical value that the semantic change changes</span>
+
+<span class="sd">    :return: Returns True if the semantic change can be performed. Otherwise returns False.</span>
+<span class="sd">    :rtype: bool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">value_diff_key</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">features_affect_key</span> <span class="o">&lt;=</span> <span class="n">value_diff_key</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">elif</span> <span class="n">value_diff_key</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&gt;=</span> <span class="n">features_affect_key</span> <span class="o">&gt;=</span> <span class="n">value_diff_key</span><span class="p">:</span>
@@ -80,6 +205,19 @@
 
 
 <div class="viewcode-block" id="apply_rules"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.apply_rules">[docs]</a><span class="k">def</span> <span class="nf">apply_rules</span><span class="p">(</span><span class="n">value_diff</span><span class="p">,</span> <span class="n">tp_sample</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function that scans all the semantic changes and executes them if they satisfy the preconditions.</span>
+
+<span class="sd">    :param value_diff: Dict with the value need change from tp to n</span>
+<span class="sd">    :type value_diff: Dict</span>
+<span class="sd">    :param tp_sample: an instance that classified as TP</span>
+<span class="sd">    :type tp_sample: list</span>
+<span class="sd">    :param ignore: Indicates whether to ignore some of the features</span>
+<span class="sd">    :type ignore: bool</span>
+
+<span class="sd">    :return: success, new TP (or None if the success is False)</span>
+<span class="sd">    :rtype: bool, list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">classes</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;Play.rules&quot;</span><span class="p">),</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">)</span>
     <span class="n">dict_apply_rule</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rule_cls</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">:</span>
@@ -111,9 +249,17 @@
     <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span></div>
 
 
-<div class="viewcode-block" id="move"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.move">[docs]</a><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<div class="viewcode-block" id="move"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.move">[docs]</a><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Semantically Equivalent Code Generation Semantically Equivalent Code Generation</span>
+
+<span class="sd">    :param tp_sample: instance that classified as TP</span>
+<span class="sd">    :type tp_sample: list</span>
+<span class="sd">   :param negative_samples: list with instances that classified as N (TN AND FN)</span>
+<span class="sd">   :type negative_samples: list</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">can_change</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">value_diff_end</span><span class="p">,</span> <span class="n">tp_sample_without_parent</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
     <span class="k">while</span> <span class="n">can_change</span><span class="p">:</span>
         <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">negative_without_parent</span> <span class="o">=</span> <span class="n">negative_samples</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
@@ -132,24 +278,31 @@
                 <span class="k">break</span>
             <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-            <span class="n">can_change</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="n">value_diff_end</span></div>
+            <span class="n">can_change</span> <span class="o">=</span> <span class="kc">False</span></div>
 
 
-<div class="viewcode-block" id="write"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.write">[docs]</a><span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="n">predict</span><span class="p">,</span> <span class="n">value_diff</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;predict_value_diff_</span><span class="si">{</span><span class="n">predict</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">value_diff</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">])</span></div>
-
-
-<div class="viewcode-block" id="get_similarities"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.get_similarities">[docs]</a><span class="k">def</span> <span class="nf">get_similarities</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">,</span> <span class="n">name_project</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<div class="viewcode-block" id="get_similarities"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.get_similarities">[docs]</a><span class="k">def</span> <span class="nf">get_similarities</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">):</span>
     <span class="n">copy_tp</span> <span class="o">=</span> <span class="n">tp_sample</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">move</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    <span class="n">move</span><span class="p">(</span><span class="n">tp_sample</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">tp_sample</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">tp_sample</span> <span class="o">==</span> <span class="n">copy_tp</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span></div>
 
 
 <div class="viewcode-block" id="play_game"><a class="viewcode-back" href="../../Play.html#Play.play_algorithm.play_game">[docs]</a><span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">name_project</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The main algorithm of the process ECG.</span>
+
+<span class="sd">    :param X_test: Test vector (Test set from the data)</span>
+<span class="sd">    :type X_test: DataFrame</span>
+<span class="sd">    :param y_true:  1d array-like, or label indicator array / sparse matrix Ground truth (correct) target values.</span>
+<span class="sd">    :type y_true: array</span>
+<span class="sd">    :param y_pred:  1d array-like, or label indicator array / sparse matrix Estimated targets as returned by a classifier.</span>
+<span class="sd">    :type y_pred: array</span>
+<span class="sd">    :param name_project: path to save file</span>
+<span class="sd">    :type name_project: str</span>
+
+<span class="sd">    :return: X_semantics_change</span>
+<span class="sd">    :rtype: DataFrame</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">find_negative_example</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
         <span class="n">negative_classify</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">iterrows</span><span class="p">(),</span> <span class="n">y_true</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(),</span> <span class="n">y_pred</span><span class="p">):</span>
@@ -168,7 +321,7 @@
         <span class="n">index_of_tp</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># find all True positive instance</span>
             <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">results</span> <span class="o">=</span> <span class="n">get_similarities</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">negative_classify</span><span class="p">,</span> <span class="n">name_project</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">get_similarities</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">negative_classify</span><span class="p">)</span>
             <span class="n">list_index_of_tp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index_of_tp</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">results</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">X_play</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
@@ -184,144 +337,38 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For </span><span class="si">{</span><span class="n">name_project</span><span class="si">}</span><span class="s2"> get </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> example change </span><span class="si">{</span><span class="n">index_success</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="nb">list</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">X_play</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">new_y_true</span></div>
 
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">predict</span><span class="p">):</span>
-        <span class="n">dict_value</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../Algorithms/predict_value_diff_</span><span class="si">{</span><span class="n">predict</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
-                <span class="n">value</span> <span class="o">=</span> <span class="n">dict_value</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
-                <span class="n">dict_value</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">value</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;value_diff_</span><span class="si">{</span><span class="n">predict</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dict_value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">dict_value</span>
-
-
-    <span class="k">def</span> <span class="nf">count_rules</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-        <span class="n">dict_model</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../Algorithms/</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">((</span><span class="n">l</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\0</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">f</span><span class="p">))</span>
-            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">row</span><span class="p">:</span>
-                    <span class="n">value</span> <span class="o">=</span> <span class="n">dict_model</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
-                    <span class="n">dict_model</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">return</span> <span class="n">dict_model</span>
-
-
-    <span class="k">def</span> <span class="nf">write_dict_to_csv</span><span class="p">(</span><span class="n">path_csv</span><span class="p">,</span> <span class="n">dict_data</span><span class="p">):</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_csv</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
-            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">dict_data</span><span class="p">:</span>
-                <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">data</span><span class="p">,</span> <span class="n">dict_data</span><span class="p">[</span><span class="n">data</span><span class="p">]])</span>
-
-
-    <span class="n">dict_model</span> <span class="o">=</span> <span class="n">count_rules</span><span class="p">(</span><span class="s2">&quot;count_rules_model_G&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dict_model</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])})</span>
-
-    <span class="c1"># # write_dict_to_csv(&quot;count_rules_model_RF.csv&quot;, dict_model)</span>
-    <span class="c1"># dict_model_G = count_rules(&quot;count_rules_model_G&quot;)</span>
-    <span class="c1"># print({k: v for k, v in sorted(dict_model.items(), key=lambda item: item[1])})</span>
-
-    <span class="c1"># write_dict_to_csv(&quot;count_rules_model_RF_G.csv&quot;, dict_model_G)</span>
-    <span class="c1"># sub = {key: dict_model_G[key] - dict_model[key] for key in dict_model_G if key in dict_model}</span>
-    <span class="c1"># print({k: v for k, v in sorted(sub.items(), key=lambda item: item[1])})</span>
-
-    <span class="c1"># print(read(0))</span>
-    <span class="c1"># print(read(1))</span>
-
-    <span class="c1"># projects = [</span>
-    <span class="c1">#     &#39;cayenne&#39;, &quot;&quot;,&#39;kylin&#39;,&quot;&quot;, &#39;jspwiki&#39;,&quot;&quot;,</span>
-    <span class="c1">#     &#39;manifoldcf&#39;, &quot;&quot;,&#39;commons-lang&#39;,&quot;&quot;, &#39;tika&#39;,&quot;&quot;,</span>
-    <span class="c1">#     &#39;kafka&#39;,&quot;&quot;,</span>
-    <span class="c1">#     &#39;zookeeper&#39;,&quot;&quot;, &#39;zeppelin&#39;,&quot;&quot;, &#39;shiro&#39;, &quot;&quot;,&#39;logging-log4j2&#39;, &quot;&quot;,&#39;activemq-artemis&#39;, &quot;&quot;,&#39;shindig&#39;,&quot;&quot;,</span>
-    <span class="c1">#     &#39;directory-studio&#39;,&quot;&quot;, &#39;tapestry-5&#39;,&quot;&quot;, &#39;openjpa&#39;,&quot;&quot;, &#39;knox&#39;,&quot;&quot;,</span>
-    <span class="c1">#     &#39;commons-configuration&#39;,&quot;&quot;,</span>
-    <span class="c1">#     &#39;xmlgraphics-batik&#39;,&quot;&quot;,</span>
-    <span class="c1">#     &#39;mahout&#39;,&quot;&quot;,</span>
-    <span class="c1">#     &#39;deltaspike&#39;, &quot;&quot;,&#39;openwebbeans&#39;, &quot;&quot;,&quot;commons-collections&quot;&quot;&quot;,</span>
-    <span class="c1"># ]</span>
-    <span class="c1"># list_model, list_G = [], []</span>
-    <span class="c1"># with open(f&quot;../Algorithms/index_tp_model.csv&quot;, &#39;r&#39;) as f:</span>
-    <span class="c1">#     reader = csv.reader(f)</span>
-    <span class="c1">#     for row in reader:</span>
-    <span class="c1">#         list_model.append([i for i in row if i != &#39;&#39;])</span>
-    <span class="c1"># with open(f&quot;../Algorithms/index_tp.csv&quot;, &#39;r&#39;) as f:</span>
-    <span class="c1">#     reader = csv.reader(f)</span>
-    <span class="c1">#     for row in reader:</span>
-    <span class="c1">#         list_G.append(row)</span>
-    <span class="c1"># for i, p in zip(range(len(list_G)), projects):</span>
-    <span class="c1">#     if i % 2 != 0 or len(list_G[i]) == 0 or len(list_model[i]) == 0:</span>
-    <span class="c1">#         continue</span>
-    <span class="c1">#     print(f&quot;----------------------------{p}----------------------------&quot;)</span>
-    <span class="c1">#     same_tp = set(list_G[i]).intersection(list_model[i])</span>
-    <span class="c1">#     fail_G = len(same_tp.intersection(list_G[i + 1]))</span>
-    <span class="c1">#     fail_model = len(same_tp.intersection(list_model[i + 1]))</span>
-    <span class="c1">#     print(fail_G / len(same_tp))</span>
-    <span class="c1">#     print(fail_model / len(same_tp))</span>
 </pre></div>
 
-          </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../index.html">SeC-GAN</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
-</ul>
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
+            </footer>
         </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shir Cohen<br/>
+  
+      &copy; Copyright 2022, Shir Cohen.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2022, Shir Cohen.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-    
 
-    
   </body>
 </html>

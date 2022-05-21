@@ -4,33 +4,167 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algorithms.Main_Algorithm &#8212; SeC-GAN 1.1 documentation</title>
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-   
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-  </head><body>
-  
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SeC-GAN 1.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
           
 
-          <div class="body" role="main">
-            
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
   <h1>Source code for Algorithms.Main_Algorithm</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -51,81 +185,37 @@
 <span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <span class="n">Linear</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Sequential</span><span class="p">,</span> <span class="n">BCELoss</span>
 <span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBClassifier</span>
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;/home/shir0/GAN_VS_RF&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">variable</span>
 <span class="kn">import</span> <span class="nn">Algorithms.Evaluate</span> <span class="k">as</span> <span class="nn">Evaluate</span>
 <span class="kn">from</span> <span class="nn">Play.play_algorithm</span> <span class="kn">import</span> <span class="n">play_game</span>
 
-<span class="n">tuning_rf_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cayenne&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;kylin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;jspwiki&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;manifoldcf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span><span class="s1">&#39;manifoldcf_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;commons-lang&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;jspwiki_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;tika&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;kafka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;kafka_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;zookeeper&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">800</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;zeppelin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2000</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;shiro&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;logging-log4j2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;activemq-artemis&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;shindig&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;directory-studio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;tapestry-5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;openjpa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;knox&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;commons-configuration&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;xmlgraphics-batik&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;mahout&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>  <span class="s1">&#39;mahout_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;deltaspike&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;openwebbeans&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;commons-collections&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;cayenne_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;kylin_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;commons-lang_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;tika_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;zookeeper_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">800</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;zeppelin_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2000</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;shiro_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;logging-log4j2_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;activemq-artemis_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;shindig_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;directory-studio_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;tapestry-5_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;openjpa_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;knox_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;commons-configuration_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;xmlgraphics-batik_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;deltaspike_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
-                  <span class="s1">&#39;openwebbeans_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;commons-collections_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">]}</span>
+<span class="n">tuning_rf_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cayenne&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;kylin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;jspwiki&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;manifoldcf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;commons-lang&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;tika&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;kafka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;zookeeper&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;zeppelin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;shiro&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;logging-log4j2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;activemq-artemis&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;shindig&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;directory-studio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;tapestry-5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;openjpa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;knox&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;log2&#39;</span><span class="p">],</span> <span class="s1">&#39;commons-configuration&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;xmlgraphics-batik&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;log2&#39;</span><span class="p">],</span> <span class="s1">&#39;mahout&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;deltaspike&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;openwebbeans&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;commons-collections&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
 
-<span class="c1"># {&#39;cayenne&#39;: [&#39;gini&#39;, 2, &#39;auto&#39;, None, 0.1, 0, True],</span>
-<span class="c1">#               &#39;cayenne_G&#39;: [&#39;gini&#39;, 2, &#39;auto&#39;, None, 0.1, 0, True],</span>
-<span class="c1">#               &#39;kylin&#39;: [&#39;gini&#39;, 2, 25, None, 0.1, 0, True],</span>
-<span class="c1">#               &#39;kylin_G&#39;: [&#39;gini&#39;, 2, 25, None, 0.1, 0, True],</span>
-<span class="c1">#               &#39;jspwiki&#39;: [&#39;gini&#39;, 2, 5, None, 0.1, 0, True],</span>
-<span class="c1">#               &#39;jspwiki_G&#39;: [&#39;gini&#39;, 2, 5, None, 0.1, 0, True],</span>
-<span class="c1">#               &#39;manifoldcf&#39;: [&#39;entropy&#39;, 2, None, 5, 0.1, 0, True],</span>
-<span class="c1">#               &#39;manifoldcf_G&#39;: [&#39;entropy&#39;, 2, None, 5, 0.1, 0, True],</span>
-<span class="c1">#               &#39;commons-lang&#39;: [&#39;gini&#39;, 50, None, None, 0.1, 0, True],</span>
-<span class="c1">#               &#39;commons-lang_G&#39;: [&#39;gini&#39;, 50, None, None, 0.1, 0, True],</span>
-<span class="c1">#               &#39;tika&#39;: [&#39;gini&#39;, 2, 50, 7, 0.1, 0, True],</span>
-<span class="c1">#               &#39;tika_G&#39;: [&#39;gini&#39;, 2, 50, 7, 0.1, 0, True],</span>
-<span class="c1">#               &#39;kafka&#39;: [&#39;entropy&#39;, 2, None, 7, 0.1, 0, True],</span>
-<span class="c1">#               &#39;kafka_G&#39;: [&#39;entropy&#39;, 2, None, 7, 0.1, 0, True],</span>
-<span class="c1">#               &#39;zookeeper&#39;: [&#39;gini&#39;, 3, None, 7, 0.1, 0, False],</span>
-<span class="c1">#               &#39;zookeeper_G&#39;: [&#39;gini&#39;, 3, None, 7, 0.1, 0, False],</span>
-<span class="c1">#               &#39;zeppelin&#39;: [&#39;gini&#39;, 5, None, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;zeppelin_G&#39;: [&#39;gini&#39;, 5, None, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;shiro&#39;: [&#39;gini&#39;, 2, 3, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;shiro_G&#39;: [&#39;gini&#39;, 2, 3, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;logging-log4j2&#39;: [&#39;gini&#39;, 2, 50, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;logging-log4j2_G&#39;: [&#39;gini&#39;, 2, 50, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;activemq-artemis&#39;: [&#39;gini&#39;, 2, 50, 7, 0.1, 0, False],</span>
-<span class="c1">#               &#39;activemq-artemis_G&#39;: [&#39;gini&#39;, 2, 50, 7, 0.1, 0, False],</span>
-<span class="c1">#               &#39;shindig&#39;: [&#39;gini&#39;, 2, 5, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;directory-studio&#39;: [&#39;entropy&#39;, 5, None, 3, 0.1, 0, False],</span>
-<span class="c1">#               &#39;tapestry-5&#39;: [&#39;entropy&#39;, 2, 50, 3, 0.1, 0, False],</span>
-<span class="c1">#               &#39;shindig_G&#39;: [&#39;gini&#39;, 2, 5, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;directory-studio_G&#39;: [&#39;entropy&#39;, 5, None, 3, 0.1, 0, False],</span>
-<span class="c1">#               &#39;tapestry-5_G&#39;: [&#39;entropy&#39;, 2, 50, 3, 0.1, 0, False],</span>
-<span class="c1">#               &#39;openjpa&#39;: [&#39;gini&#39;, 2, 50, None, 0.1, 0, False], &#39;knox&#39;: [&#39;gini&#39;, 3, None, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;commons-configuration&#39;: [&#39;gini&#39;, 2, &#39;log2&#39;, 5, 0.1, 0, False],</span>
-<span class="c1">#               &#39;xmlgraphics-batik&#39;: [&#39;gini&#39;, 10, 50, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;mahout&#39;: [&#39;gini&#39;, 2, &#39;auto&#39;, 5, 0.1, 0, False], &#39;deltaspike&#39;: [&#39;gini&#39;, 3, 25, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;openjpa_G&#39;: [&#39;gini&#39;, 2, 50, None, 0.1, 0, False], &#39;knox_G&#39;: [&#39;gini&#39;, 3, None, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;commons-configuration_G&#39;: [&#39;gini&#39;, 2, &#39;log2&#39;, 5, 0.1, 0, False],</span>
-<span class="c1">#               &#39;xmlgraphics-batik_G&#39;: [&#39;gini&#39;, 10, 50, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;mahout_G&#39;: [&#39;gini&#39;, 2, &#39;auto&#39;, 5, 0.1, 0, False],</span>
-<span class="c1">#               &#39;deltaspike_G&#39;: [&#39;gini&#39;, 3, 25, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;openwebbeans_G&#39;: [&#39;entropy&#39;, 2, 50, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;commons-collections_G&#39;: [&#39;gini&#39;, 2, None, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;openwebbeans&#39;: [&#39;entropy&#39;, 2, 50, None, 0.1, 0, False],</span>
-<span class="c1">#               &#39;commons-collections&#39;: [&#39;gini&#39;, 2, None, None, 0.1, 0, False]</span>
-<span class="c1">#               }</span>
+                  <span class="s1">&#39;cayenne_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;kylin_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;jspwiki_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;manifoldcf_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;commons-lang_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;tika_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;kafka_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;zookeeper_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;zeppelin_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;shiro_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;logging-log4j2_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;activemq-artemis_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;shindig_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;directory-studio_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;tapestry-5_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;openjpa_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;knox_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;log2&#39;</span><span class="p">],</span> <span class="s1">&#39;commons-configuration_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;xmlgraphics-batik_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;log2&#39;</span><span class="p">],</span> <span class="s1">&#39;mahout_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;deltaspike_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span> <span class="s1">&#39;openwebbeans_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;commons-collections_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">]</span>
 
-<span class="c1"># n_estimators_old =</span>
+
+                  <span class="p">}</span>
 
 <span class="n">tuning_lr_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cayenne&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span> <span class="s1">&#39;kylin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="s1">&#39;saga&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span>
                   <span class="s1">&#39;jspwiki&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span> <span class="s1">&#39;manifoldcf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="s1">&#39;saga&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span>
@@ -150,55 +240,6 @@
                   <span class="s1">&#39;commons-collections_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="s1">&#39;saga&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span> <span class="s1">&#39;cayenne_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span>
                   <span class="s1">&#39;jspwiki_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span> <span class="s1">&#39;manifoldcf_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="s1">&#39;saga&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span>
                   <span class="s1">&#39;kafka_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="s1">&#39;saga&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span> <span class="s1">&#39;mahout_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="s1">&#39;saga&#39;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">]}</span>
-<span class="n">tuning_xgb_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cayenne&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;cayenne_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;kylin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;jspwiki&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;manifoldcf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;commons-lang&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;tika&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;kafka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s2">&quot;zookeeper&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;zeppelin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;shiro&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;logging-log4j2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;activemq-artemis&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;shindig&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;directory-studio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;tapestry-5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;openjpa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;knox&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;commons-configuration&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;xmlgraphics-batik&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;mahout&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;deltaspike&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;openwebbeans&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;commons-collections&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-
-                   <span class="s1">&#39;kylin_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;jspwiki_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;manifoldcf_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;commons-lang_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;tika_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;kafka_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s2">&quot;zookeeper_G&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;zeppelin_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;shiro_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;logging-log4j2_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;activemq-artemis_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;shindig_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;directory-studio_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;tapestry-5_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;openjpa_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;knox_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;commons-configuration_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;xmlgraphics-batik_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;mahout_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;deltaspike_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;openwebbeans_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                   <span class="s1">&#39;commons-collections_G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;friedman_mse&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-
-                   <span class="p">}</span>
 
 <span class="n">tuning_nb_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cayenne&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.657933224657568</span><span class="p">],</span> <span class="s1">&#39;kylin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2848035868435802</span><span class="p">],</span> <span class="s1">&#39;jspwiki&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.15199110829529336</span><span class="p">],</span>
                   <span class="s1">&#39;manifoldcf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0533669923120631</span><span class="p">],</span> <span class="s1">&#39;commons-lang&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.001873817422860383</span><span class="p">],</span>
@@ -214,26 +255,9 @@
 <span class="n">space_lr</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;penalty&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="s1">&#39;l2&#39;</span><span class="p">,</span> <span class="s1">&#39;elasticnet&#39;</span><span class="p">],</span> <span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span> <span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span> <span class="s1">&#39;liblinear&#39;</span><span class="p">,</span> <span class="s1">&#39;sag&#39;</span><span class="p">,</span> <span class="s1">&#39;saga&#39;</span><span class="p">],</span>
             <span class="s2">&quot;l1_ratio&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]}</span>
 
-<span class="n">space_xgb</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;deviance&#39;</span><span class="p">,</span> <span class="s1">&#39;exponential&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">],</span>  <span class="c1"># 0.0001, 0.001, , 0.1, 0.2, 0.3</span>
-    <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">],</span>  <span class="c1"># 25, 50, 100,  , 1000</span>
-    <span class="s1">&#39;criterion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;friedman_mse&#39;</span><span class="p">],</span>  <span class="c1"># , &#39;squared_error&#39;, &#39;mse&#39;, &#39;mae&#39;</span>
-    <span class="s2">&quot;min_samples_split&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># , 5, 10, 0.1</span>
-<span class="p">}</span>
-
 <span class="n">space_rf</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;criterion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span>
-    <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;log2&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
-    <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span>
-    <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">],</span>  <span class="c1"># 2, 5, 10,</span>
-    <span class="s1">&#39;min_impurity_decrease&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="c1"># 1e-7, 1e-6, 1e-5, 1e-4, 1e-3,</span>
-    <span class="s1">&#39;warm_start&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span>
-    <span class="c1"># &quot;n_estimators&quot;: [50,  100, 500, 800, 1000, 1500, 2000],  # 50,</span>
-    <span class="c1"># &quot;criterion&quot;: [&quot;gini&quot;, &quot;entropy&quot;], &quot;max_features&quot;: [&quot;auto&quot;, &quot;sqrt&quot;, &quot;log2&quot;]</span>
-    <span class="c1"># &quot;criterion&quot;: [&quot;gini&quot;], &quot;max_features&quot;: [&quot;auto&quot;]</span>
-<span class="p">}</span>
+    <span class="s2">&quot;n_estimators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">2000</span><span class="p">],</span>
+    <span class="s2">&quot;criterion&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;gini&quot;</span><span class="p">,</span> <span class="s2">&quot;entropy&quot;</span><span class="p">],</span> <span class="s2">&quot;max_features&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">,</span> <span class="s2">&quot;log2&quot;</span><span class="p">]}</span>
 
 <span class="n">space_nb</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;var_smoothing&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)}</span>
 
@@ -251,15 +275,13 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The function reads the file containing the faked instances.</span>
 
-<span class="sd">    :param two_g: A parameter that specifies whether to use information from one G or two G.</span>
-<span class="sd">    A default value is True and therefore two G are used.</span>
+<span class="sd">    :param two_g: A parameter that specifies whether to use information from one G or two G. A default value is True and therefore two G are used.</span>
 <span class="sd">    :type bool</span>
-<span class="sd">    :return: data_from_G (X) , y_from_G (Y)</span>
+
+<span class="sd">    :returns: data_from_G (X) , y_from_G (Y)</span>
 <span class="sd">    :rtype: DataFrame, Series</span>
 
-<span class="sd">    .. note::</span>
-<span class="sd">            You must create the fake data using the generator from file Generate_fake.py</span>
-
+<span class="sd">    .. note:: You must create the fake data using the generator from file Generate_fake.py</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">two_g</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NAME_PROJECT</span><span class="p">,</span> <span class="s2">&quot;train_test&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;new_fake_data_</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">_bug_2000.csv&quot;</span><span class="p">))</span>  <span class="c1"># _1000_512</span>
@@ -282,7 +304,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The function reads the data after it has completed the preprocessing process.</span>
 
-<span class="sd">    :return: X_train, X_test, X_valid, y_train, y_test, y_valid</span>
+<span class="sd">    :returns: X_train, X_test, X_valid, y_train, y_test, y_valid</span>
 <span class="sd">    :rtype: DataFrame,, DataFrame, DataFrame, Series, Series, Series</span>
 
 <span class="sd">    .. note:: You must create the train, validation and test set using from file main_create_data.py</span>
@@ -320,18 +342,14 @@
 <span class="sd">    :param x_val: Training vector (Validation set from the data)</span>
 <span class="sd">    :type x_val: DataFrame</span>
 <span class="sd">    :param y_val: Target relative to X for classification</span>
-<span class="sd">    :type</span>
-<span class="sd">    y_val: Series</span>
-<span class="sd">    :param space: Dictionary with parameters names (str) as keys and lists of parameter settings to try</span>
-<span class="sd">    as values, or a list of such dictionaries, in which case the grids spanned by each dictionary in the list are</span>
-<span class="sd">    explored. This enables searching over any sequence of parameter settings.</span>
-<span class="sd">    :type space : Dictionary(str,</span>
-<span class="sd">    list)</span>
+<span class="sd">    :type y_val: Series</span>
+<span class="sd">    :param space: Dictionary with parameters names (str) as keys and lists of parameter settings to try as values, or a list of such dictionaries, in which case the grids spanned by each dictionary in the list are explored. This enables searching over any sequence of parameter settings.</span>
+<span class="sd">    :type space: Dictionary(str, list)</span>
 <span class="sd">    :param estimator: Classifier - this is assumed to implement the scikit-learn estimator interface.</span>
 <span class="sd">    :type estimator: object</span>
-<span class="sd">    :return: Parameter setting that gave the best results on the hold out data.</span>
-<span class="sd">    :rtype: Dictionary</span>
 
+<span class="sd">    :return Parameter setting that gave the best results on the hold out data.</span>
+<span class="sd">    :rtype: Dictionary</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">cv_inner</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
     <span class="n">search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">space</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv_inner</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -341,11 +359,7 @@
 
 <div class="viewcode-block" id="train"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.Main_Algorithm.train">[docs]</a><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The main function that performs the training process. The function extracts the evaluation metrics after the</span>
-<span class="sd">    training process on the test set. In addition, the function executes the ECG algorithm and evaluates the model on</span>
-<span class="sd">    X_semantic_change.</span>
-<span class="sd">    The function also calculates the importances of the features and saves them in the results folder in a file named</span>
-<span class="sd">    importances_path.</span>
+<span class="sd">    The main function that performs the training process. The function extracts the evaluation metrics after the training process on the test set. In addition, the function executes the ECG algorithm and evaluates the model on X_semantic_change. The function also calculates the importances of the features and saves them in the results folder in a file named importances_path.</span>
 
 <span class="sd">    :param X_train: Training vector (Training set from the data)</span>
 <span class="sd">    :type X_train: DataFrame</span>
@@ -408,6 +422,7 @@
 <div class="viewcode-block" id="write_results"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.Main_Algorithm.write_results">[docs]</a><span class="k">def</span> <span class="nf">write_results</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">play_scores</span><span class="p">,</span> <span class="n">importances</span><span class="o">=</span><span class="p">[]):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Write the results to a file.</span>
+
 <span class="sd">    :param scores:</span>
 <span class="sd">    :type scores: list</span>
 <span class="sd">    :param play_scores:</span>
@@ -432,8 +447,8 @@
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commit_shape</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        A constructor that initializes the neural network.</span>
-<span class="sd">        initializes is performed according to the parameters in the dictionary tuning_D.</span>
+<span class="sd">        A constructor that initializes the neural network. initializes is performed according to the parameters in the dictionary tuning_D.</span>
+
 <span class="sd">        :param commit_shape: Number of columns in data.</span>
 <span class="sd">        :type commit_shape: int</span>
 <span class="sd">        :rtype: object</span>
@@ -465,10 +480,8 @@
 
 <div class="viewcode-block" id="generate_batch_real"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.Main_Algorithm.generate_batch_real">[docs]</a><span class="k">def</span> <span class="nf">generate_batch_real</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    .. generate_batch_real:</span>
-
 <span class="sd">    Random selection of samples from the train set for a single batch.</span>
-<span class="sd">    The batch size is determined by the keyword &quot;batch_size&quot; in the dictionary tuning_D (default 30).. The percentage of instances</span>
+<span class="sd">    The batch size is determined by the keyword &quot;batch_size&quot; in the dictionary tuning_D (default 30). The percentage of instances</span>
 <span class="sd">    that did not induce a defect is defined by the keyword &quot;number_commit_without_bug&quot; (default 0.8).</span>
 
 <span class="sd">    :return: [X_real, labels]</span>
@@ -513,13 +526,11 @@
 
 <div class="viewcode-block" id="generate_batch_fake"><a class="viewcode-back" href="../../Algorithms.html#Algorithms.Main_Algorithm.generate_batch_fake">[docs]</a><span class="k">def</span> <span class="nf">generate_batch_fake</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    .. generate_batch_fake:</span>
-
 <span class="sd">    Random selection of samples from the fake data set for a single batch.</span>
 <span class="sd">    The batch size is determined by the keyword &quot;batch_size&quot; in the dictionary tuning_D (default 30).</span>
 <span class="sd">    The percentage of instances that did not induce a defect is defined by the keyword &quot;number_commit_without_bug&quot; (default 0.8).</span>
 
-<span class="sd">    :return: [X_fake, labels]</span>
+<span class="sd">    :returns: [X_fake, labels]</span>
 <span class="sd">    :rtype: DataFrame, Series</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">batch_size_G</span> <span class="o">=</span> <span class="n">tuning_D</span><span class="p">[</span><span class="n">name_G</span><span class="p">][</span><span class="s1">&#39;batch_size_G&#39;</span><span class="p">]</span>
@@ -589,15 +600,16 @@
         <span class="s1">&#39;commons-lang&#39;</span><span class="p">,</span>
         <span class="s1">&#39;tika&#39;</span><span class="p">,</span>
         <span class="s1">&#39;kafka&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;zookeeper&#39;</span><span class="p">,</span> <span class="s1">&#39;zeppelin&#39;</span><span class="p">,</span> <span class="s1">&#39;shiro&#39;</span><span class="p">,</span> <span class="s1">&#39;logging-log4j2&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;activemq-artemis&#39;</span><span class="p">,</span> <span class="s1">&#39;shindig&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;zookeeper&#39;</span><span class="p">,</span> <span class="s1">&#39;zeppelin&#39;</span><span class="p">,</span> <span class="s1">&#39;shiro&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;logging-log4j2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;activemq-artemis&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;shindig&#39;</span><span class="p">,</span>
         <span class="s1">&#39;directory-studio&#39;</span><span class="p">,</span> <span class="s1">&#39;tapestry-5&#39;</span><span class="p">,</span>
         <span class="s1">&#39;openjpa&#39;</span><span class="p">,</span> <span class="s1">&#39;knox&#39;</span><span class="p">,</span>
         <span class="s1">&#39;commons-configuration&#39;</span><span class="p">,</span>
         <span class="s1">&#39;xmlgraphics-batik&#39;</span><span class="p">,</span> <span class="s1">&#39;mahout&#39;</span><span class="p">,</span>
         <span class="s1">&#39;deltaspike&#39;</span><span class="p">,</span>
         <span class="s1">&#39;openwebbeans&#39;</span><span class="p">,</span> <span class="s2">&quot;commons-collections&quot;</span>
-
     <span class="p">]</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">name_model</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -633,9 +645,6 @@
                     <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
                     <span class="n">X_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">data_from_G</span><span class="p">])</span>
                     <span class="n">y_train</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y_from_G</span><span class="p">]</span>
-                    <span class="c1"># if &quot;RF&quot; not in name_model:</span>
-                    <span class="c1">#     X_train = pd.concat([X_train, data_from_G])</span>
-                    <span class="c1">#     y_train = list(y_train) + [i for i in y_from_G]</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">X_CTGAN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">data_from_G</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
                     <span class="n">Y_CTGAN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">y_from_G</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -650,26 +659,8 @@
             <span class="k">if</span> <span class="s2">&quot;RF&quot;</span> <span class="ow">in</span> <span class="n">name_model</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">tuning_rf_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">param</span> <span class="o">=</span> <span class="n">tuning</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">,</span> <span class="n">space_rf</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">))</span>
-                    <span class="n">tuning_rf_dict</span><span class="p">[</span><span class="n">project</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">param</span><span class="p">[</span><span class="s1">&#39;criterion&#39;</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;max_features&#39;</span><span class="p">],</span>
-                                               <span class="n">param</span><span class="p">[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;min_samples_split&#39;</span><span class="p">],</span>
-                                               <span class="n">param</span><span class="p">[</span><span class="s1">&#39;min_impurity_decrease&#39;</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;warm_start&#39;</span><span class="p">]]</span>
+                    <span class="n">tuning_rf_dict</span><span class="p">[</span><span class="n">project</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">param</span><span class="p">[</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;criterion&#39;</span><span class="p">],</span>  <span class="n">param</span><span class="p">[</span><span class="s1">&#39;max_features&#39;</span><span class="p">]]</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">tuning_rf_dict</span><span class="p">)</span>
-                <span class="c1"># tuning_rf_dict[project][4] = 2  # min_samples_split (default)</span>
-                <span class="c1"># tuning_rf_dict[project][2] = &#39;auto&#39;  # max_features (default)</span>
-                <span class="c1"># tuning_rf_dict[project][6] = False  # warm_start</span>
-                <span class="c1"># tuning_rf_dict[project][1] = 500  # n_estimators</span>
-                <span class="c1"># # tuning_rf_dict[project][3] = 500  # max_depth</span>
-                <span class="c1"># # tuning_rf_dict[project][0] = &#39;entropy&#39;</span>
-                <span class="c1"># tuning_rf_dict[project][2] = &#39;log2&#39;</span>
-                <span class="c1"># model = RandomForestClassifier(random_state=42,</span>
-                <span class="c1">#                                criterion=tuning_rf_dict[project][0],</span>
-                <span class="c1">#                                n_estimators=tuning_rf_dict[project][1],</span>
-                <span class="c1">#                                max_features=tuning_rf_dict[project][2],  # default=&quot;auto&quot;</span>
-                <span class="c1">#                                max_depth=tuning_rf_dict[project][3],  # default=None</span>
-                <span class="c1">#                                min_samples_split=tuning_rf_dict[project][4],  # default=2</span>
-                <span class="c1">#                                min_impurity_decrease=tuning_rf_dict[project][5],  # default=0.0</span>
-                <span class="c1">#                                warm_start=tuning_rf_dict[project][6])  # default=False</span>
-                <span class="c1"># tuning_rf_dict[project][1] = &#39;entropy&#39;</span>
                 <span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="n">tuning_rf_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
                                                <span class="n">criterion</span><span class="o">=</span><span class="n">tuning_rf_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
                                                <span class="n">max_features</span><span class="o">=</span><span class="n">tuning_rf_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
@@ -680,26 +671,6 @@
 
                 <span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="n">tuning_lr_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
                                            <span class="n">solver</span><span class="o">=</span><span class="n">tuning_lr_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">l1_ratio</span><span class="o">=</span><span class="n">tuning_lr_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
-            <span class="k">elif</span> <span class="s2">&quot;XGB&quot;</span> <span class="ow">in</span> <span class="n">name_model</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">tuning_xgb_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">param</span> <span class="o">=</span> <span class="n">tuning</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">,</span> <span class="n">space_xgb</span><span class="p">,</span>
-                                   <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_label_encoder</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-                    <span class="n">tuning_xgb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">param</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;learning_rate&#39;</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">],</span>
-                                                <span class="n">param</span><span class="p">[</span><span class="s1">&#39;criterion&#39;</span><span class="p">],</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;min_samples_split&#39;</span><span class="p">]]</span>
-
-                <span class="n">tuning_xgb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.001</span>
-                <span class="n">model</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="n">tuning_xgb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
-                                      <span class="n">learning_rate</span><span class="o">=</span><span class="n">tuning_xgb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
-                                      <span class="n">n_estimators</span><span class="o">=</span><span class="n">tuning_xgb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">criterion</span><span class="o">=</span><span class="n">tuning_xgb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span>
-                                      <span class="n">min_samples_split</span><span class="o">=</span><span class="n">tuning_xgb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">4</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                                      <span class="n">use_label_encoder</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">tuning_xgb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">])</span>
-
-            <span class="k">elif</span> <span class="s2">&quot;NB&quot;</span> <span class="ow">in</span> <span class="n">name_model</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">tuning_nb_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">param</span> <span class="o">=</span> <span class="n">tuning</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">,</span> <span class="n">space_nb</span><span class="p">,</span> <span class="n">GaussianNB</span><span class="p">())</span>
-                    <span class="n">tuning_nb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">param</span><span class="p">[</span><span class="s1">&#39;var_smoothing&#39;</span><span class="p">]]</span>
-                <span class="n">model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">(</span><span class="n">var_smoothing</span><span class="o">=</span><span class="n">tuning_nb_dict</span><span class="p">[</span><span class="n">project</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
             <span class="k">else</span><span class="p">:</span>  <span class="c1"># D</span>
                 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
                 <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -726,71 +697,38 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
             <span class="k">pass</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">tuning_xgb_dict</span><span class="p">)</span>
-    <span class="c1"># print(tuning_rf_dict)</span>
-    <span class="c1"># print(tuning_lr_dict)</span>
-    <span class="c1"># print(tuning_nb_dict)</span>
 </pre></div>
 
-          </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../index.html">SeC-GAN</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
-</ul>
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
+            </footer>
         </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shir Cohen<br/>
+  
+      &copy; Copyright 2022, Shir Cohen.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2022, Shir Cohen.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-    
 
-    
   </body>
 </html>
