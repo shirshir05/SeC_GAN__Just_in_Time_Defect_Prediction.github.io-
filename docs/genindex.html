@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; SeC-GAN 1.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SeC-GAN 1.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="CreateData.html#CreateData.add_modification">add_modification() (in module CreateData)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddAssignemnt2EqualAssignment">AddAssignemnt2EqualAssignment (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddAssignWithSwitch">AddAssignWithSwitch (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddCommaNewLine">AddCommaNewLine (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddComment">AddComment (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddCommentNewLine">AddCommentNewLine (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddContinue">AddContinue (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddElseWithBlock">AddElseWithBlock (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddEmptyLine">AddEmptyLine (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddEmptySwitch">AddEmptySwitch (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddIfAndElse">AddIfAndElse (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddIfFalse">AddIfFalse (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddIfFalseCommaDot">AddIfFalseCommaDot (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddIfMember">AddIfMember (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddIfMember_v2">AddIfMember_v2 (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddMethod">AddMethod (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddPublicAttribute">AddPublicAttribute (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddReturn">AddReturn (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddSwitchStatement">AddSwitchStatement (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddVar">AddVar (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddWhileMember">AddWhileMember (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddWhileMemberV2">AddWhileMemberV2 (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddWhileUnreachable">AddWhileUnreachable (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddAssignemnt2EqualAssignment.affect_feature">affect_feature() (Play.rules.AddAssignemnt2EqualAssignment method)</a>
+
+      <ul>
+        <li><a href="Play.html#Play.rules.AddAssignWithSwitch.affect_feature">(Play.rules.AddAssignWithSwitch method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddCommaNewLine.affect_feature">(Play.rules.AddCommaNewLine method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddComment.affect_feature">(Play.rules.AddComment method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddCommentNewLine.affect_feature">(Play.rules.AddCommentNewLine method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddContinue.affect_feature">(Play.rules.AddContinue method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddElseWithBlock.affect_feature">(Play.rules.AddElseWithBlock method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddEmptyLine.affect_feature">(Play.rules.AddEmptyLine method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddEmptySwitch.affect_feature">(Play.rules.AddEmptySwitch method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddIfAndElse.affect_feature">(Play.rules.AddIfAndElse method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddIfFalse.affect_feature">(Play.rules.AddIfFalse method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddIfFalseCommaDot.affect_feature">(Play.rules.AddIfFalseCommaDot method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddIfMember.affect_feature">(Play.rules.AddIfMember method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddIfMember_v2.affect_feature">(Play.rules.AddIfMember_v2 method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddMethod.affect_feature">(Play.rules.AddMethod method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddPublicAttribute.affect_feature">(Play.rules.AddPublicAttribute method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddReturn.affect_feature">(Play.rules.AddReturn method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddSwitchStatement.affect_feature">(Play.rules.AddSwitchStatement method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddVar.affect_feature">(Play.rules.AddVar method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddWhileMember.affect_feature">(Play.rules.AddWhileMember method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddWhileMemberV2.affect_feature">(Play.rules.AddWhileMemberV2 method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.AddWhileUnreachable.affect_feature">(Play.rules.AddWhileUnreachable method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.CallFunctionWithoutParam.affect_feature">(Play.rules.CallFunctionWithoutParam method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.Case2IfElse.affect_feature">(Play.rules.Case2IfElse method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.ChangeIfToFor.affect_feature">(Play.rules.ChangeIfToFor method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.ChangeIfToWhile.affect_feature">(Play.rules.ChangeIfToWhile method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.For2While.affect_feature">(Play.rules.For2While method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.ForStatementWithMember.affect_feature">(Play.rules.ForStatementWithMember method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.IfDividing.affect_feature">(Play.rules.IfDividing method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.IfWithCallFunctionParam.affect_feature">(Play.rules.IfWithCallFunctionParam method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.InfixExpressionDividing.affect_feature">(Play.rules.InfixExpressionDividing method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.LoopIfContinue2Else.affect_feature">(Play.rules.LoopIfContinue2Else method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.Move.affect_feature">(Play.rules.Move method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.PP2AddAssignment.affect_feature">(Play.rules.PP2AddAssignment method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.ReverseIfElse.affect_feature">(Play.rules.ReverseIfElse method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.SingleIF2ConditionalExp.affect_feature">(Play.rules.SingleIF2ConditionalExp method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.SwitchWithCallFunctionParam.affect_feature">(Play.rules.SwitchWithCallFunctionParam method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.ThrowException.affect_feature">(Play.rules.ThrowException method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.While2For.affect_feature">(Play.rules.While2For method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Algorithms
+
+      <ul>
+        <li><a href="Algorithms.html#module-Algorithms">module</a>
+</li>
+      </ul></li>
+      <li>
+    Algorithms.Evaluate
+
+      <ul>
+        <li><a href="Algorithms.html#module-Algorithms.Evaluate">module</a>
+</li>
+      </ul></li>
+      <li>
+    Algorithms.GenerateFakeData
+
+      <ul>
+        <li><a href="Algorithms.html#module-Algorithms.GenerateFakeData">module</a>
+</li>
+      </ul></li>
+      <li>
+    Algorithms.Main_Algorithm
+
+      <ul>
+        <li><a href="Algorithms.html#module-Algorithms.Main_Algorithm">module</a>
+</li>
+      </ul></li>
+      <li><a href="Play.html#Play.rules.Move.apply">apply() (Play.rules.Move method)</a>
+</li>
+      <li><a href="Play.html#Play.rules.Move.apply_if_can">apply_if_can() (Play.rules.Move method)</a>
+</li>
+      <li><a href="Play.html#Play.play_algorithm.apply_rules">apply_rules() (in module Play.play_algorithm)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.rules.CallFunctionWithoutParam">CallFunctionWithoutParam (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.AddElseWithBlock.can_apply">can_apply() (Play.rules.AddElseWithBlock method)</a>
+
+      <ul>
+        <li><a href="Play.html#Play.rules.Case2IfElse.can_apply">(Play.rules.Case2IfElse method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.ChangeIfToFor.can_apply">(Play.rules.ChangeIfToFor method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.ChangeIfToWhile.can_apply">(Play.rules.ChangeIfToWhile method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.For2While.can_apply">(Play.rules.For2While method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.IfDividing.can_apply">(Play.rules.IfDividing method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.InfixExpressionDividing.can_apply">(Play.rules.InfixExpressionDividing method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.LoopIfContinue2Else.can_apply">(Play.rules.LoopIfContinue2Else method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.Move.can_apply">(Play.rules.Move method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.PP2AddAssignment.can_apply">(Play.rules.PP2AddAssignment method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.ReverseIfElse.can_apply">(Play.rules.ReverseIfElse method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.SingleIF2ConditionalExp.can_apply">(Play.rules.SingleIF2ConditionalExp method)</a>
+</li>
+        <li><a href="Play.html#Play.rules.While2For.can_apply">(Play.rules.While2For method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.rules.Case2IfElse">Case2IfElse (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.ChangeIfToFor">ChangeIfToFor (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.ChangeIfToWhile">ChangeIfToWhile (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.play_algorithm.check_valid">check_valid() (in module Play.play_algorithm)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.Commit">Commit (class in SZZ.issues_extractor)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.CommittedFile">CommittedFile (class in SZZ.issues_extractor)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.CommittedModeFile">CommittedModeFile (class in SZZ.issues_extractor)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.GenerateFakeData.CPU_Unpickler">CPU_Unpickler (class in Algorithms.GenerateFakeData)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.GenerateFakeData.create_data">create_data() (in module Algorithms.GenerateFakeData)</a>
+</li>
+      <li><a href="CreateData.html#CreateData.create_directories">create_directories() (in module CreateData)</a>
+</li>
+      <li>
+    CreateData
+
+      <ul>
+        <li><a href="CreateData.html#module-CreateData">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.Discriminator">Discriminator (class in Algorithms.Main_Algorithm)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.play_algorithm.euclidean_similarity">euclidean_similarity() (in module Play.play_algorithm)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.GenerateFakeData.eval_metric_all_data">eval_metric_all_data() (in module Algorithms.GenerateFakeData)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.GenerateFakeData.eval_metrics">eval_metrics() (in module Algorithms.GenerateFakeData)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Algorithms.html#Algorithms.Evaluate.evaluate">evaluate() (in module Algorithms.Evaluate)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Evaluate.evaluate_on_test">evaluate_on_test() (in module Algorithms.Evaluate)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.extract_json">extract_json() (in module SZZ.issues_extractor)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Algorithms.html#Algorithms.GenerateFakeData.CPU_Unpickler.find_class">find_class() (Algorithms.GenerateFakeData.CPU_Unpickler method)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.fix_renamed_files">fix_renamed_files() (in module SZZ.issues_extractor)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.rules.For2While">For2While (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.ForStatementWithMember">ForStatementWithMember (class in Play.rules)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.Discriminator.forward">forward() (Algorithms.Main_Algorithm.Discriminator method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.generate_batch_fake">generate_batch_fake() (in module Algorithms.Main_Algorithm)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.generate_batch_real">generate_batch_real() (in module Algorithms.Main_Algorithm)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.get_jira_issues">get_jira_issues() (in module SZZ.issues_extractor)</a>
+</li>
+      <li><a href="variable.html#variable.get_key_issue">get_key_issue() (in module variable)</a>
+</li>
+      <li><a href="variable.html#variable.get_name_dit_blame">get_name_dit_blame() (in module variable)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="variable.html#variable.get_name_github">get_name_github() (in module variable)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.JiraIssue.get_name_or_default">get_name_or_default() (SZZ.issues_extractor.JiraIssue static method)</a>
+</li>
+      <li><a href="variable.html#variable.get_project">get_project() (in module variable)</a>
+</li>
+      <li><a href="variable.html#variable.get_repo_full_name">get_repo_full_name() (in module variable)</a>
+</li>
+      <li><a href="Play.html#Play.play_algorithm.get_similarities">get_similarities() (in module Play.play_algorithm)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.rules.IfDividing">IfDividing (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.IfWithCallFunctionParam">IfWithCallFunctionParam (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.rules.InfixExpressionDividing">InfixExpressionDividing (class in Play.rules)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="SZZ.html#SZZ.issues_extractor.Commit.init_commit_by_git_commit">init_commit_by_git_commit() (SZZ.issues_extractor.Commit class method)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.init_ctgna">init_ctgna() (in module Algorithms.Main_Algorithm)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.init_value">init_value() (in module Algorithms.Main_Algorithm)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.Issue">Issue (class in SZZ.issues_extractor)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="SZZ.html#SZZ.issues_extractor.JiraIssue">JiraIssue (class in SZZ.issues_extractor)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.rules.LoopIfContinue2Else">LoopIfContinue2Else (class in Play.rules)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Preprocess.html#Preprocess.preprocessing.Preprocessing.main">main() (Preprocess.preprocessing.Preprocessing method)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.main_szz">main_szz() (in module SZZ.issues_extractor)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.merge_commit">merge_commit() (in module SZZ.issues_extractor)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="Algorithms.html#module-Algorithms">Algorithms</a>
+</li>
+        <li><a href="Algorithms.html#module-Algorithms.Evaluate">Algorithms.Evaluate</a>
+</li>
+        <li><a href="Algorithms.html#module-Algorithms.GenerateFakeData">Algorithms.GenerateFakeData</a>
+</li>
+        <li><a href="Algorithms.html#module-Algorithms.Main_Algorithm">Algorithms.Main_Algorithm</a>
+</li>
+        <li><a href="CreateData.html#module-CreateData">CreateData</a>
+</li>
+        <li><a href="Play.html#module-Play">Play</a>
+</li>
+        <li><a href="Play.html#module-Play.play_algorithm">Play.play_algorithm</a>
+</li>
+        <li><a href="Play.html#module-Play.rules">Play.rules</a>
+</li>
+        <li><a href="Preprocess.html#module-Preprocess">Preprocess</a>
+</li>
+        <li><a href="Preprocess.html#module-Preprocess.name_features">Preprocess.name_features</a>
+</li>
+        <li><a href="Preprocess.html#module-Preprocess.preprocessing">Preprocess.preprocessing</a>
+</li>
+        <li><a href="SZZ.html#module-SZZ">SZZ</a>
+</li>
+        <li><a href="SZZ.html#module-SZZ.issues_extractor">SZZ.issues_extractor</a>
+</li>
+        <li><a href="SZZ.html#module-SZZ.pydriller_szz">SZZ.pydriller_szz</a>
+</li>
+        <li><a href="variable.html#module-variable">variable</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.rules.Move">Move (class in Play.rules)</a>
+</li>
+      <li><a href="Play.html#Play.play_algorithm.move">move() (in module Play.play_algorithm)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Play
+
+      <ul>
+        <li><a href="Play.html#module-Play">module</a>
+</li>
+      </ul></li>
+      <li>
+    Play.play_algorithm
+
+      <ul>
+        <li><a href="Play.html#module-Play.play_algorithm">module</a>
+</li>
+      </ul></li>
+      <li>
+    Play.rules
+
+      <ul>
+        <li><a href="Play.html#module-Play.rules">module</a>
+</li>
+      </ul></li>
+      <li><a href="Play.html#Play.play_algorithm.play_game">play_game() (in module Play.play_algorithm)</a>
+</li>
+      <li><a href="Play.html#Play.rules.PP2AddAssignment">PP2AddAssignment (class in Play.rules)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    Preprocess
+
+      <ul>
+        <li><a href="Preprocess.html#module-Preprocess">module</a>
+</li>
+      </ul></li>
+      <li>
+    Preprocess.name_features
+
+      <ul>
+        <li><a href="Preprocess.html#module-Preprocess.name_features">module</a>
+</li>
+      </ul></li>
+      <li>
+    Preprocess.preprocessing
+
+      <ul>
+        <li><a href="Preprocess.html#module-Preprocess.preprocessing">module</a>
+</li>
+      </ul></li>
+      <li><a href="Preprocess.html#Preprocess.preprocessing.Preprocessing">Preprocessing (class in Preprocess.preprocessing)</a>
+</li>
+      <li><a href="Preprocess.html#Preprocess.preprocessing.Preprocessing.preprocessing">preprocessing() (Preprocess.preprocessing.Preprocessing method)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.pydriller_szz.pydriller_szz">pydriller_szz() (in module SZZ.pydriller_szz)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="CreateData.html#CreateData.read_commit_blame">read_commit_blame() (in module CreateData)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.read_data">read_data() (in module Algorithms.Main_Algorithm)</a>
+</li>
+      <li><a href="Play.html#Play.rules.ReverseIfElse">ReverseIfElse (class in Play.rules)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="SZZ.html#SZZ.issues_extractor.save_to_json">save_to_json() (in module SZZ.issues_extractor)</a>
+</li>
+      <li><a href="Play.html#Play.rules.SingleIF2ConditionalExp">SingleIF2ConditionalExp (class in Play.rules)</a>
+</li>
+      <li><a href="Preprocess.html#Preprocess.preprocessing.Preprocessing.split_train_test">split_train_test() (Preprocess.preprocessing.Preprocessing method)</a>
+</li>
+      <li><a href="Play.html#Play.rules.SwitchWithCallFunctionParam">SwitchWithCallFunctionParam (class in Play.rules)</a>
+</li>
+      <li>
+    SZZ
+
+      <ul>
+        <li><a href="SZZ.html#module-SZZ">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    SZZ.issues_extractor
+
+      <ul>
+        <li><a href="SZZ.html#module-SZZ.issues_extractor">module</a>
+</li>
+      </ul></li>
+      <li>
+    SZZ.pydriller_szz
+
+      <ul>
+        <li><a href="SZZ.html#module-SZZ.pydriller_szz">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.rules.ThrowException">ThrowException (class in Play.rules)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.Issue.to_features_dict">to_features_dict() (SZZ.issues_extractor.Issue method)</a>
+</li>
+      <li><a href="SZZ.html#SZZ.issues_extractor.Issue.to_saveable_dict">to_saveable_dict() (SZZ.issues_extractor.Issue method)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.train">train() (in module Algorithms.Main_Algorithm)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.train_FCNN">train_FCNN() (in module Algorithms.Main_Algorithm)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.train_iteration_D_fake_data">train_iteration_D_fake_data() (in module Algorithms.Main_Algorithm)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.train_iteration_D_real_data">train_iteration_D_real_data() (in module Algorithms.Main_Algorithm)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.Discriminator.training">training (Algorithms.Main_Algorithm.Discriminator attribute)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.tuning">tuning() (in module Algorithms.Main_Algorithm)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="variable.html#variable.update">update() (in module variable)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="CreateData.html#CreateData.update_bug">update_bug() (in module CreateData)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.play_algorithm.valu_diff_distance">valu_diff_distance() (in module Play.play_algorithm)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    variable
+
+      <ul>
+        <li><a href="variable.html#module-variable">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Play.html#Play.rules.While2For">While2For (class in Play.rules)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Preprocess.html#Preprocess.preprocessing.Preprocessing.write_data">write_data() (Preprocess.preprocessing.Preprocessing method)</a>
+</li>
+      <li><a href="Algorithms.html#Algorithms.Main_Algorithm.write_results">write_results() (in module Algorithms.Main_Algorithm)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shir Cohen<br/>
+  
+      &copy; Copyright 2022, Shir Cohen.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
