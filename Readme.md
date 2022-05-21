@@ -1,4 +1,4 @@
-# SeC-GAN - Generative Adversarial Network for Just-in-Time Defect Prediction with Semantic Changes Sensitivity
+# SeC-GAN - Generative Adversarial Network for Just-in-Time Defect Prediction
 
 ## I'm grateful that you're interested in my work! :)
 
